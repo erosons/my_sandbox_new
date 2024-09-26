@@ -1,0 +1,16 @@
+services:
+  sqlserver:
+    container_name: server
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    user: root
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: Password1
+      MSSQL_AGENT_ENABLED : 'true'
+      MSSQL_COLLATION : 'SQL_Latin1_General_CP1_CI_AS'
+    volumes:
+      - ~/Documents/GitHub/my_sandbox/Engineering/Docker/SQLServer/database_data:/var/opt/mssql/data:rw
+      - ~/home/samson/Documents/GitHub/my_sandbox/Engineering/Docker/SQLServer/backfile:/var/opt/mssql/log:rw
+      - ~/home/samson/Documents/GitHub/my_sandbox/Engineering/Docker/SQLServer/secret:/var/opt/mssql/secrets:rw

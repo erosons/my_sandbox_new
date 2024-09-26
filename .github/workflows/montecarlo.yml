@@ -1,0 +1,56 @@
+# GitHub Actions Workflow for Pipeline Observability
+
+name:  Monte Carlo Configuration Observability Workflow
+
+# ---------------------
+# Event Workflows Section
+# ---------------------
+on:
+  push: 
+    branches: [main]            # Workflow is triggered on push to the 'main' branch
+  pull_request:
+    branches: [main]            # Workflow is triggered on pull request to the 'main' branch
+  schedule:
+    - cron: '0 0 * * *'         # Workflow is scheduled to run every day at 12:00 AM
+
+# ---------------------
+# Environment Variables Section
+# ---------------------
+env:
+  MONTE_CARLO_DIR: ./MonteCarlo
+
+
+# ---------------------
+# Jobs Section
+# ---------------------
+jobs:
+  etl:
+    runs-on: ubuntu-latest        # The job runs on the latest Ubuntu environment
+    
+    # ---------------------
+    # Actions (Steps) Section
+    # ---------------------
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Action to check out the repository's code
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2   # Action to set up Python environment
+        with:
+          python-version: '3.11'        # Set Python version to 3.11
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          cd $MONTE_CARLO_DIR
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   # Install dependencies using pip if requirements.txt exists
+      
+      - name: Configure Monte Carlo with API Key and Secret
+        run: |
+          montecarlo configure --api-key ${{ secrets.MONTECARLO_API_KEY }} --api-secret ${{ secrets.MONTECARLO_API_SECRET }}
+
+      # Run Monte Carlo monitor apply command
+      - name: Apply Monte Carlo monitors
+        run: |
+          montecarlo monitors apply --dry-run
+          montecarlo monitors apply

@@ -1,0 +1,91 @@
+samson_deployment:
+  dev:
+    outputs:
+      dev_sqlserver:
+        type: sqlserver
+        driver: "ODBC Driver 18 for SQL Server" # (The ODBC Driver installed on your system)
+        server: localhost
+        port: 1433
+        database: CockroackEDW
+        schema: dbo
+        user: sa
+        password: ${SQL_Server_password}
+
+        # profiles.yml
+
+      dev_postgres:
+        type: postgres
+        host: localhost
+        user: my_user
+        password: ${password}
+        port: 5432
+        dbname: dev_db
+        schema: dev_schema
+
+      dev_snowflake:
+        type: snowflake
+        account: my_snowflake_account
+
+        # User/password auth
+        user: my_user
+        password: ${password}
+
+        # Role configurations
+        role: my_role
+        warehouse: my_warehouse
+        database: dev_db
+        schema: dev_schema
+        client_session_keep_alive: False
+
+        # certifcate verifcateion
+        private_key_path: [path/to/private.key]
+      # or private_key instead of private_key_path
+      private_key_passphrase: [passphrase for the private key, if key is encrypted]
+
+    target: dev_sqlserver # Set the default target for the development environment
+
+  # Target 2: Production Environment
+  prod:
+    outputs:
+      prod_postgres:
+        type: postgres
+        host: prod.host.com
+        user: prod_user
+        password: prod_password
+        port: 5432
+        dbname: prod_db
+        schema: prod_schema
+
+      prod_snowflake:
+        type: snowflake
+        account: my_snowflake_account
+        user: prod_user
+        password: prod_password
+        role: prod_role
+        warehouse: prod_warehouse
+        database: prod_db
+        schema: prod_schema
+
+    target: prod_snowflake # Set the default target for the production environment
+
+  # Target 3: Test Environment
+  test:
+    outputs:
+      test_postgres:
+        type: postgres
+        host: test.host.com
+        user: test_user
+        password: test_password
+        port: 5432
+        dbname: test_db
+        schema: test_schema
+
+      test_bigquery:
+        type: bigquery
+        method: service-account
+        project: test_project
+        dataset: test_dataset
+        threads: 4
+        keyfile: /path/to/keyfile.json
+
+    target: test_bigquery # Set the default target for the test environment

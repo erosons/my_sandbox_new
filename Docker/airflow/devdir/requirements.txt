@@ -1,0 +1,2 @@
+pyodbc==4.0.34
+dsnparse==0.2.0

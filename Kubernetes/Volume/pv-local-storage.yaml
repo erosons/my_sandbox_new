@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-pvc
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  #ReadWriteOnce - The volume can be mounted as read-write by a single node
+  #readWriteMany - The volume can be mounted as read-write by many nodes
+  #readOnlyMany - The volume can be mounted read-only by many nodes
+    - ReadWriteMany
+  storageClassName: local-storage
+  local:
+    path: /Users/s.eromonsei/storage/data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          # name of the node where the volume is located
+          - docker-desktop 

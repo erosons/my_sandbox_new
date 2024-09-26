@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+    HostA:
+        #build: ./ubuntu_base
+        build: ./image_www
+        image: seed-ubuntu-base-image
+        expose:
+            - 80:80
+        ports:
+            - 8082:80
+        container_name: host-10.9.0.5
+        tty: true
+        cap_add:
+                - ALL
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.5
+
+    HostB:
+        image: seed-ubuntu-base-image
+        expose:
+            - 80:80
+        ports:
+            - 8080:80
+        container_name: host-10.9.0.6
+        tty: true
+        cap_add:
+                - ALL
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.6
+
+    HostC:
+        image: seed-ubuntu-base-image
+        expose:
+            - 80
+        ports:
+            - "8083:80"
+        container_name: host-10.9.0.7
+        tty: true
+        cap_add:
+                - ALL
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.7
+
+networks:
+    net-10.9.0.0:
+        name: net-10.9.0.0
+        ipam:
+            config:
+                - subnet: 10.9.0.0/24

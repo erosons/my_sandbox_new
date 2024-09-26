@@ -1,0 +1,32 @@
+
+var ftGUID_3535476="43331A99E7C312";
+var ftConfID_3535476="18454536";
+var ftParams_3535476="ftx=&fty=&ftadz=&ftscw=ebuy=22242993;esid=4104197;epid=258547372;ecid=110338886;eadv=8025626;eaid=453531299;erid=110368970;eexpid=;eexcid=;erv=1;eiid=CP_Mw_XDp-YCFY8YAQodzm4EyQ;&ft_custom=8025626__22242993__4104197__110338886&ftOBA=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.btserve.com%2Frender%3FifrId%3Dwaldo-tag-3935-0%26code%3Dwaldo-tag-3935%26t%3Dbidt-sra%26auctionId%3D7f68b4b6-e186-4862-bc36-e5e57ca2988a%7Cwaldo-tag-3935%7C0%26v2%3Dtrue%26passback%3Dfalse&ft_keyword=__15647605___258547372&ft_section=89835118830475859903243548619274725995%7C__15647605__%7C258547372&cachebuster=128204.19727671494";
+var ftKeyword_3535476="";
+var ftCustom_3535476="8025626__22242993__4104197__110338886";
+var ftSection_3535476="89835118830475859903243548619274725995|__15647605__|258547372";
+var ftSegment_3535476="xtx,eqe,epy,r0o,epx5155,epx,eny5155,eny,env,env480566022,um2,yo5";
+var ftSegmentList_3535476=[{s:'xtx'},{s:'eqe',t:43382204},{s:'epy'},{m:'c5075_divver',s:'r0o'},{m:'c5075_lvdiv',s:'epx5155'},{s:'epx'},{m:'c5075_c5075_div',s:'eny5155'},{s:'eny'},{m:'c5075_vcp',s:'env'},{m:'c5075_onp',s:'env480566022'},{s:'um2'},{s:'yo5'}];
+var ftRuleMatch_3535476="00001000";
+var ftTimestamp_3535476="1575859760";
+var ftGeoC2_3535476="us";
+var ftGeoState_3535476="tx";
+var ftGeoCity_3535476="houston";
+var ftISP_3535476="comcast cable communications inc.";
+var ftSpeed_3535476="cable";
+var ftDMA_3535476="618";
+var ftLong_3535476="-95.5864";
+var ftLat_3535476="29.6703";
+var ftPostal_3535476="77099";
+var ftTimeZone_3535476="-600";
+var ftMobileCarrier_3535476="";
+var ftImp3535476 = {};
+ftImp3535476.privacy = "x";
+ftImp3535476.guidAge = "27";
+ftImp3535476.impID = "6417B4D7-6146-677C-38FA-88046467873B";
+ftImp3535476.duid = "FT:43331A99E7C312";
+
+ftImp3535476.ft_tpplid = "";
+ftImp3535476.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/353/3535476/2877208/js/j-3535476-2877208.js" id="ftscript_m3535476" name="ftscript_m3535476"></scr'+'ipt>');

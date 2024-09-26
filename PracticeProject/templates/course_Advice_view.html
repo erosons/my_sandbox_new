@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Market
+{% endblock %}
+
+{% block ul %}
+<a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+{% endblock %}
+
+{% block content %}
+<!-- Sidebar -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar col-md-4">
+            <h4 id="course-advisor-link">Course Advisor Page</h4><br>
+            <a class="nav-link" href="#" id="link1">Student Profile List</a>
+            <a class="nav-link" href="#" id="link2"> Prerequisite Approval Queue</a>
+            <a class="nav-link" href="#" id="link3">Profile change Approval Queue</a>
+            <a class="nav-link" href="#" id="link4">Student Major Change</a>
+            <a class="nav-link" href="#" id="link5">Analytics Dashboard</a>
+            <a class="nav-link" href="#" id="link6"> Course Enlist Approval</a>
+        </div>
+
+        <!-- Content -->
+        <div class="content col-md-8">
+            <!-- Add the search bar -->
+            <div class="row mb-3">
+                <div class="col-md-12 search-bar">
+                    <input type="text" class="form-control search-input" id="courserAdvicer-search"
+                        placeholder="Search Student by Name">
+                    <span class="search-icon" style="font-size: 24px;">🔍</span>
+                </div>
+            </div>
+            <div id="content-container">
+                <!-- Content will be loaded here based on navigation -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content will be loaded here based on navigation -->
+<div id="jinja_data" data-studentlist='{{ studentlist | tojson }}'></div>
+<div id="jinja_prerequisite" data-prerequistelist='{{ prerequisitelist | tojson }}'></div>
+
+<!-- Include JavaScript -->
+<script src=static/js/student_profile_list.js></script>
+<script src=static/js/courses_adviser_search.js></script>
+
+{% endblock %}

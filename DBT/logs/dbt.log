@@ -1,0 +1,422 @@
+[0m02:40:44.600551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73505f32aaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73505f6958d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73505f695870>]}
+
+
+============================== 02:40:44.602742 | 20c518b1-5f3c-42fa-8bab-0f2ca0402fd3 ==============================
+[0m02:40:44.602742 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:40:44.603198 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/samson/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:40:44.608715 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:40:44.609128 [info ] [MainThread]: python version: 3.10.14
+[0m02:40:44.609461 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:40:44.609833 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:40:44.614692 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m02:40:45.054675 [info ] [MainThread]: Using profiles dir at /home/samson/.dbt
+[0m02:40:45.055145 [info ] [MainThread]: Using profiles.yml file at /home/samson/.dbt/profiles.yml
+[0m02:40:45.055544 [info ] [MainThread]: Using dbt_project.yml file at /home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml
+[0m02:40:45.055945 [info ] [MainThread]: Configuration:
+[0m02:40:45.056262 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m02:40:45.056658 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m02:40:45.056971 [info ] [MainThread]: Required dependencies:
+[0m02:40:45.057301 [debug] [MainThread]: Executing "git --help"
+[0m02:40:45.058862 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:40:45.059252 [debug] [MainThread]: STDERR: "b''"
+[0m02:40:45.059559 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:40:45.059925 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m02:40:45.060392 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m02:40:45.060839 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "CockroackEDW", target "dev_sqlserver" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+
+
+[0m02:40:45.061302 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml> not found
+
+[0m02:40:45.062083 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.503751, "process_user_time": 1.935884, "process_kernel_time": 0.073995, "process_mem_max_rss": "192572", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m02:40:45.062580 [debug] [MainThread]: Command `dbt debug` failed at 02:40:45.062491 after 0.50 seconds
+[0m02:40:45.062989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73505f32aaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73505f695870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73503bd7eda0>]}
+[0m02:40:45.063359 [debug] [MainThread]: Flushing usage events
+[0m02:43:08.182632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7473999b0340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747399ff79d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74739a1d1840>]}
+
+
+============================== 02:43:08.184741 | 1ab16d68-6901-46ff-8799-07e895d63bb1 ==============================
+[0m02:43:08.184741 [info ] [MainThread]: Running with dbt=1.7.18
+[0m02:43:08.185280 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/samson/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:43:08.185860 [info ] [MainThread]: dbt version: 1.7.18
+[0m02:43:08.186248 [info ] [MainThread]: python version: 3.10.14
+[0m02:43:08.186690 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:43:08.187103 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:43:08.290723 [error] [MainThread]: Encountered an error:
+Couldn't build proto file into descriptor pool: duplicate file name types.proto
+[0m02:43:08.292321 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/main.py", line 445, in debug
+    results = task.run()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 123, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 212, in _load_profile
+    profile: Profile = Profile.render(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 212, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/bigquery/__init__.py", line 1, in <module>
+    from dbt.adapters.bigquery.connections import BigQueryConnectionManager  # noqa
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/bigquery/connections.py", line 9, in <module>
+    from dbt_common.events.contextvars import get_node_info
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt_common/events/__init__.py", line 1, in <module>
+    from dbt_common.events.base_types import EventLevel
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt_common/events/base_types.py", line 4, in <module>
+    from dbt_common.events import types_pb2
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt_common/events/types_pb2.py", line 18, in <module>
+    DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0btypes.proto\x12\x0bproto_types\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x02\n\tEventInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0b\n\x03msg\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\x12\x15\n\rinvocation_id\x18\x05 \x01(\t\x12\x0b\n\x03pid\x18\x06 \x01(\x05\x12\x0e\n\x06thread\x18\x07 \x01(\t\x12&\n\x02ts\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x05\x65xtra\x18\t \x03(\x0b\x32!.proto_types.EventInfo.ExtraEntry\x12\x10\n\x08\x63\x61tegory\x18\n \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x0eGenericMessage\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\"1\n\x11RetryExternalCall\x12\x0f\n\x07\x61ttempt\x18\x01 \x01(\x05\x12\x0b\n\x03max\x18\x02 \x01(\x05\"j\n\x14RetryExternalCallMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12,\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1e.proto_types.RetryExternalCall\"#\n\x14RecordRetryException\x12\x0b\n\x03\x65xc\x18\x01 \x01(\t\"p\n\x17RecordRetryExceptionMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12/\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32!.proto_types.RecordRetryException\"@\n\x13SystemCouldNotWrite\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06reason\x18\x02 \x01(\t\x12\x0b\n\x03\x65xc\x18\x03 \x01(\t\"n\n\x16SystemCouldNotWriteMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12.\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32 .proto_types.SystemCouldNotWrite\"!\n\x12SystemExecutingCmd\x12\x0b\n\x03\x63md\x18\x01 \x03(\t\"l\n\x15SystemExecutingCmdMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12-\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1f.proto_types.SystemExecutingCmd\"\x1c\n\x0cSystemStdOut\x12\x0c\n\x04\x62msg\x18\x01 \x01(\t\"`\n\x0fSystemStdOutMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12\'\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x19.proto_types.SystemStdOut\"\x1c\n\x0cSystemStdErr\x12\x0c\n\x04\x62msg\x18\x01 \x01(\t\"`\n\x0fSystemStdErrMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12\'\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x19.proto_types.SystemStdErr\",\n\x16SystemReportReturnCode\x12\x12\n\nreturncode\x18\x01 \x01(\x05\"t\n\x19SystemReportReturnCodeMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12\x31\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32#.proto_types.SystemReportReturnCode\"\x19\n\nFormatting\x12\x0b\n\x03msg\x18\x01 \x01(\t\"\\\n\rFormattingMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12%\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x17.proto_types.Formatting\"\x13\n\x04Note\x12\x0b\n\x03msg\x18\x01 \x01(\t\"P\n\x07NoteMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12\x1f\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x11.proto_types.Note\"\x19\n\nPrintEvent\x12\x0b\n\x03msg\x18\x01 \x01(\t\"\\\n\rPrintEventMsg\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x16.proto_types.EventInfo\x12%\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x17.proto_types.PrintEventb\x06proto3')
+TypeError: Couldn't build proto file into descriptor pool: duplicate file name types.proto
+
+[0m02:43:08.293290 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.14685036, "process_user_time": 1.694256, "process_kernel_time": 0.060973, "process_mem_max_rss": "107032", "process_in_blocks": "816", "process_out_blocks": "24", "command_success": false}
+[0m02:43:08.293846 [debug] [MainThread]: Command `dbt debug` failed at 02:43:08.293698 after 0.15 seconds
+[0m02:43:08.294269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7473999b0340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747396f966b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747396f95f60>]}
+[0m02:43:08.294708 [debug] [MainThread]: Flushing usage events
+[0m02:47:17.447714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f79e2ebc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f785438b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f78543850>]}
+
+
+============================== 02:47:17.451263 | 318e028c-9c06-49f8-a685-6f9dc9bdb4f2 ==============================
+[0m02:47:17.451263 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:47:17.451735 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': '/home/samson/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:47:17.456926 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:47:17.457329 [info ] [MainThread]: python version: 3.10.14
+[0m02:47:17.457701 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:47:17.458017 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:47:17.463985 [error] [MainThread]: Encountered an error:
+cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+[0m02:47:17.465171 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/main.py", line 406, in debug
+    results = task.run()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 120, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/__init__.py", line 3, in <module>
+    from dbt.adapters.sqlserver.sql_server_adapter import SQLServerAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/sql_server_adapter.py", line 5, in <module>
+    from dbt.adapters.fabric import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/__init__.py", line 3, in <module>
+    from dbt.adapters.fabric.fabric_adapter import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/fabric_adapter.py", line 18, in <module>
+    from dbt.contracts.graph.nodes import ColumnLevelConstraint, ConstraintType, ModelLevelConstraint
+ImportError: cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+
+[0m02:47:17.466046 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.05811296, "process_user_time": 0.887183, "process_kernel_time": 0.063941, "process_mem_max_rss": "85816", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m02:47:17.466567 [debug] [MainThread]: Command `dbt debug` failed at 02:47:17.466482 after 0.06 seconds
+[0m02:47:17.466989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f79e2ebc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f78b3b6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787f784e01c0>]}
+[0m02:47:17.467423 [debug] [MainThread]: Flushing usage events
+[0m02:48:05.324965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734ee0fa2b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734edf6b37f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734edf6b3850>]}
+
+
+============================== 02:48:05.327651 | 39833320-644d-4aa6-ab2f-f44d52a09699 ==============================
+[0m02:48:05.327651 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:48:05.328113 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/samson/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:48:05.333400 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:48:05.333803 [info ] [MainThread]: python version: 3.10.14
+[0m02:48:05.334201 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:48:05.334518 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:48:05.340336 [error] [MainThread]: Encountered an error:
+cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+[0m02:48:05.341523 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/main.py", line 406, in debug
+    results = task.run()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 120, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/__init__.py", line 3, in <module>
+    from dbt.adapters.sqlserver.sql_server_adapter import SQLServerAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/sql_server_adapter.py", line 5, in <module>
+    from dbt.adapters.fabric import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/__init__.py", line 3, in <module>
+    from dbt.adapters.fabric.fabric_adapter import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/fabric_adapter.py", line 18, in <module>
+    from dbt.contracts.graph.nodes import ColumnLevelConstraint, ConstraintType, ModelLevelConstraint
+ImportError: cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+
+[0m02:48:05.342385 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.0591053, "process_user_time": 0.916528, "process_kernel_time": 0.047027, "process_mem_max_rss": "85856", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m02:48:05.342960 [debug] [MainThread]: Command `dbt debug` failed at 02:48:05.342870 after 0.06 seconds
+[0m02:48:05.343334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734ee0fa2b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734edf6be200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x734edf6bf880>]}
+[0m02:48:05.343756 [debug] [MainThread]: Flushing usage events
+[0m02:49:26.582055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d744facb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d72c0f670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d72c0f6d0>]}
+
+
+============================== 02:49:26.584670 | cfb5e128-ab51-4601-aeed-4d88a54ff7e2 ==============================
+[0m02:49:26.584670 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:49:26.585162 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/samson/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:49:26.590417 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:49:26.590858 [info ] [MainThread]: python version: 3.10.14
+[0m02:49:26.591195 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:49:26.591564 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:49:26.597554 [error] [MainThread]: Encountered an error:
+cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+[0m02:49:26.598856 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/cli/main.py", line 406, in debug
+    results = task.run()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 120, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/task/debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/__init__.py", line 3, in <module>
+    from dbt.adapters.sqlserver.sql_server_adapter import SQLServerAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/sqlserver/sql_server_adapter.py", line 5, in <module>
+    from dbt.adapters.fabric import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/__init__.py", line 3, in <module>
+    from dbt.adapters.fabric.fabric_adapter import FabricAdapter
+  File "/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/adapters/fabric/fabric_adapter.py", line 18, in <module>
+    from dbt.contracts.graph.nodes import ColumnLevelConstraint, ConstraintType, ModelLevelConstraint
+ImportError: cannot import name 'ColumnLevelConstraint' from 'dbt.contracts.graph.nodes' (/home/samson/anaconda3/envs/dbtBigQuery/lib/python3.10/site-packages/dbt/contracts/graph/nodes.py)
+
+[0m02:49:26.599770 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.058903437, "process_user_time": 0.895653, "process_kernel_time": 0.057977, "process_mem_max_rss": "85848", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m02:49:26.600275 [debug] [MainThread]: Command `dbt debug` failed at 02:49:26.600194 after 0.06 seconds
+[0m02:49:26.600746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d744facb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d72c19e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x799d72c1ada0>]}
+[0m02:49:26.601173 [debug] [MainThread]: Flushing usage events
+[0m02:50:16.504838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750339906bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750337feb730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750337feb790>]}
+
+
+============================== 02:50:16.507436 | 65a2a653-9f21-4192-92b9-f5971658d0db ==============================
+[0m02:50:16.507436 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:50:16.507999 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/samson/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:50:16.513287 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:50:16.513888 [info ] [MainThread]: python version: 3.10.14
+[0m02:50:16.514258 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:50:16.514594 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:50:16.519392 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m02:50:16.948278 [info ] [MainThread]: Using profiles dir at /home/samson/.dbt
+[0m02:50:16.948774 [info ] [MainThread]: Using profiles.yml file at /home/samson/.dbt/profiles.yml
+[0m02:50:16.949145 [info ] [MainThread]: Using dbt_project.yml file at /home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml
+[0m02:50:16.949530 [info ] [MainThread]: Configuration:
+[0m02:50:16.949870 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m02:50:16.950188 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m02:50:16.950550 [info ] [MainThread]: Required dependencies:
+[0m02:50:16.950911 [debug] [MainThread]: Executing "git --help"
+[0m02:50:16.952402 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:50:16.952828 [debug] [MainThread]: STDERR: "b''"
+[0m02:50:16.953132 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:50:16.953457 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m02:50:16.953885 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m02:50:16.954333 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "CockroackEDW", target "dev_sqlserver" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+
+
+[0m02:50:16.954723 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml> not found
+
+[0m02:50:16.955552 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.4915095, "process_user_time": 1.908644, "process_kernel_time": 0.085849, "process_mem_max_rss": "196140", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m02:50:16.956082 [debug] [MainThread]: Command `dbt debug` failed at 02:50:16.955998 after 0.49 seconds
+[0m02:50:16.956453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750339906bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7503393a7640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750337feb6a0>]}
+[0m02:50:16.956869 [debug] [MainThread]: Flushing usage events
+[0m02:50:37.518188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0ed082c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0eb767700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0eb767760>]}
+
+
+============================== 02:50:37.520747 | 197d1ac4-eeaf-4e12-8e1c-c444bebd4780 ==============================
+[0m02:50:37.520747 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:50:37.521218 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': '/home/samson/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:50:37.526379 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:50:37.526747 [info ] [MainThread]: python version: 3.10.14
+[0m02:50:37.527068 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:50:37.527385 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:50:37.531988 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m02:50:37.958832 [info ] [MainThread]: Using profiles dir at /home/samson/.dbt
+[0m02:50:37.959262 [info ] [MainThread]: Using profiles.yml file at /home/samson/.dbt/profiles.yml
+[0m02:50:37.959655 [info ] [MainThread]: Using dbt_project.yml file at /home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml
+[0m02:50:37.960038 [info ] [MainThread]: Configuration:
+[0m02:50:37.960383 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m02:50:37.960760 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m02:50:37.961103 [info ] [MainThread]: Required dependencies:
+[0m02:50:37.961462 [debug] [MainThread]: Executing "git --help"
+[0m02:50:37.962989 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:50:37.963375 [debug] [MainThread]: STDERR: "b''"
+[0m02:50:37.963728 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:50:37.964048 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m02:50:37.964541 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m02:50:37.964951 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "CockroackEDW", target "dev_sqlserver" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+
+
+[0m02:50:37.965396 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml> not found
+
+[0m02:50:37.966133 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.48930147, "process_user_time": 1.891523, "process_kernel_time": 0.088117, "process_mem_max_rss": "196272", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m02:50:37.966660 [debug] [MainThread]: Command `dbt debug` failed at 02:50:37.966558 after 0.49 seconds
+[0m02:50:37.967033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0ed082c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0ebd9db40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0ccee6dd0>]}
+[0m02:50:37.967399 [debug] [MainThread]: Flushing usage events
+[0m02:51:14.013925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7250ad4a6c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7250abbbb700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7250abbbb760>]}
+
+
+============================== 02:51:14.015887 | e912e235-8c3b-40ee-9540-cd6647c2bde6 ==============================
+[0m02:51:14.015887 [info ] [MainThread]: Running with dbt=1.8.6
+[0m02:51:14.016352 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/samson/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:51:14.022250 [info ] [MainThread]: dbt version: 1.8.6
+[0m02:51:14.022672 [info ] [MainThread]: python version: 3.10.14
+[0m02:51:14.022998 [info ] [MainThread]: python path: /home/samson/anaconda3/envs/dbtBigQuery/bin/python
+[0m02:51:14.023321 [info ] [MainThread]: os info: Linux-6.8.0-41-generic-x86_64-with-glibc2.39
+[0m02:51:14.454904 [info ] [MainThread]: Using profiles dir at /home/samson/.dbt
+[0m02:51:14.455343 [info ] [MainThread]: Using profiles.yml file at /home/samson/.dbt/profiles.yml
+[0m02:51:14.455769 [info ] [MainThread]: Using dbt_project.yml file at /home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml
+[0m02:51:14.456157 [info ] [MainThread]: adapter type: bigquery
+[0m02:51:14.456492 [info ] [MainThread]: adapter version: 1.8.2
+[0m02:51:14.456863 [info ] [MainThread]: Configuration:
+[0m02:51:14.457179 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m02:51:14.457570 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m02:51:14.457913 [info ] [MainThread]: Required dependencies:
+[0m02:51:14.458247 [debug] [MainThread]: Executing "git --help"
+[0m02:51:14.459750 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:51:14.460127 [debug] [MainThread]: STDERR: "b''"
+[0m02:51:14.460426 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:51:14.460868 [info ] [MainThread]: Connection:
+[0m02:51:14.461356 [info ] [MainThread]:   method: oauth
+[0m02:51:14.461743 [info ] [MainThread]:   database: inner-arch-277522
+[0m02:51:14.462138 [info ] [MainThread]:   execution_project: inner-arch-277522
+[0m02:51:14.462510 [info ] [MainThread]:   schema: dbt_northwind
+[0m02:51:14.462851 [info ] [MainThread]:   location: US
+[0m02:51:14.463191 [info ] [MainThread]:   priority: interactive
+[0m02:51:14.463555 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m02:51:14.463997 [info ] [MainThread]:   impersonate_service_account: None
+[0m02:51:14.464343 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m02:51:14.464841 [info ] [MainThread]:   job_retries: 1
+[0m02:51:14.465284 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m02:51:14.465608 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m02:51:14.465937 [info ] [MainThread]:   timeout_seconds: 300
+[0m02:51:14.466282 [info ] [MainThread]:   client_id: None
+[0m02:51:14.466700 [info ] [MainThread]:   token_uri: None
+[0m02:51:14.467138 [info ] [MainThread]:   dataproc_region: None
+[0m02:51:14.467628 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m02:51:14.467990 [info ] [MainThread]:   gcs_bucket: None
+[0m02:51:14.468349 [info ] [MainThread]:   dataproc_batch: None
+[0m02:51:14.468909 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m02:51:14.475469 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m02:51:14.475965 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:51:26.609524 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m02:51:26.610340 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m02:51:26.610958 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m02:51:26.611481 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/samson/Desktop/my_sandbox/Engineering/DBT/dbt_project.yml> not found
+
+[0m02:51:26.612027 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m02:51:26.613148 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 12.640618, "process_user_time": 1.95043, "process_kernel_time": 0.094729, "process_mem_max_rss": "196472", "process_in_blocks": "88", "process_out_blocks": "32", "command_success": false}
+[0m02:51:26.614024 [debug] [MainThread]: Command `dbt debug` failed at 02:51:26.613873 after 12.64 seconds
+[0m02:51:26.614656 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m02:51:26.615035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7250ad4a6c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72508d1a7c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72508d1a7910>]}
+[0m02:51:26.615433 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,17 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: my-storage-class
+provisioner: kubernetes.io/aws-ebs  # this tells kubernestes which class to use for the storage
+  type: gp2
+  iossPerGB: "10"
+  fsType: "ext4"
+  zone: us-east-1a
+
+  #Create a local storage class
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer

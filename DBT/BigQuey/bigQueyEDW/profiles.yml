@@ -1,0 +1,23 @@
+bigQueyEDW:
+  outputs:
+    dev:
+      dataset: dbt_northwind
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: inner-arch-277522
+      threads: 2
+      type: bigquery
+    prod:
+      dataset: dbt_northwind
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: ringed-pad-435306-s1
+      threads: 2
+      type: bigquery
+  target: prod

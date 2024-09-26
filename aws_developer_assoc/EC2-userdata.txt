@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+cd /var/www/html
+aws s3 cp s3://etlbucket/index.txt ./
+aws s3 cp s3://etlbucket/name.csv ./
+EC2NAME="$(cat ./name.csv|sort -R|head -n 1|xargs)"
+sed "s/INSTANCE/$EC2NAME/" index.txt > index.html
+cp index.html order.html

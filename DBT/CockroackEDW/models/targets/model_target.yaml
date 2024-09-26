@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_Customers
+    description: "This caries all the attributes of the customer"
+    columns:
+      - name: customerID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: dim_salesperson
+    description: "This descibes details about person with respect to sales"
+    columns:
+      - name: BusinessEntityID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: fct_sales
+    description: "This descibes details about person with respect to sales"
+    columns:
+      - name: BTerritoryID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null

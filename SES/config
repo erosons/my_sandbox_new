@@ -1,0 +1,10 @@
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host SES-airflow
+    HostName 10.93.41.204
+    User ec2-user
+    IdentityFile "/Users/s.eromonsei/Documents/Lokesh_airflowMigration/Airflow.pem"
+    LogLevel=error
+    RequestTTY force
+    RemoteCommand sudo su -
+    Port 22
+  

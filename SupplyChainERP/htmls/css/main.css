@@ -1,0 +1,709 @@
+/* CSS Document for Screens */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+#page {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+body {
+
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    color: #edf4f4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Text */
+
+h1 {
+    margin: 0 0 1em 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.1em;
+    color: rgb(4, 10, 10);
+    ;
+}
+
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: rgb(10, 9, 9);
+}
+
+h4 {
+    margin: 0 0 1.5em 0;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+
+
+p {
+    margin: 0 0 .1em 0;
+    color: #000;
+}
+
+a {
+    color: #007eff
+}
+
+a:visited {
+    color: #65b1ff;
+}
+
+a.btn {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(80, 72, 72);
+    border: 1px solid #fff;
+    border-radius: 27.5px;
+    padding: 4px 15px;
+    position: relative;
+    left: 10px;
+    top: 30px;
+}
+
+/*  Header  */
+
+section.w3-content {
+    overflow: hidden;
+    margin-top: 100px;
+    height: 800px;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 20px;
+    display: none;
+    float: left;
+}
+
+header a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 66px;
+    background: url(../images/tavels.svg) no-repeat 0 0;
+    background-size: contain;
+    top: 10px;
+    left: 20px;
+}
+
+header a.logo span {
+    display: none
+}
+
+header div.hero {
+    position: absolute;
+    width: 42%;
+    top: 130px;
+    left: 10%;
+}
+
+header div.hero h1 {
+    line-height: 1em;
+    margin: 0 0 30px 0;
+    color: #fff;
+}
+
+/* Section All */
+section {
+    padding: 20px 50px;
+}
+
+section::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.mySlides {
+    display: none;
+}
+
+.w3-content,
+.w3-auto {
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+
+/* Section Main */
+section.Text h3 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.4em;
+    margin: 10px 0 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: Apple Chancery;
+}
+
+section.Text h3 span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+
+section.main aside {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+section.main .content {
+    margin: 20px;
+    background: no-repeat center top;
+    padding-top: 250px;
+    background-size: 250px 250px;
+    text-align: center;
+}
+
+
+
+section.main aside h3 a {
+    color: black;
+    text-decoration: none;
+}
+
+
+section.main aside h3 a:hover {
+    color: rgb(154, 52, 160);
+    /*text-decoration: underline;*/
+}
+
+
+section.main aside .content.open-source {
+    background-image: url(../images/fs_resize.png);
+
+}
+
+section.main aside .content.cloud {
+    background-image: url(../images/As_resize.png);
+
+}
+
+section.main aside .content.Analytics {
+    background-image: url(../images/kindpng_7464777.png);
+
+}
+
+section.main aside .content.Lighting {
+    background-image: url(../images/lighting_resize.png);
+
+}
+
+section.main aside .content.Pillow {
+    background-image: url(../images/Pillows.png);
+
+}
+
+
+
+section.main1 aside {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+section.main1 .content {
+    margin: 5px;
+    background: no-repeat center top;
+    background-size: 550px 250px;
+    padding-top: 250px;
+    text-align: center;
+}
+
+/*
+section.main1 aside h3 a {
+    color: black;
+    text-decoration: none;
+}
+
+section.main1 aside h3 a:hover {
+    color: rgb(154, 52, 160);
+    /*text-decoration: underline;
+}
+
+*/
+
+section.main1 aside .content.promo1 {
+    background-image: url(../images/promo1.png);
+}
+
+section.main1 aside .content.promo2 {
+    background-image: url(../images/promo2.png);
+}
+
+section.main1 aside .content.promo3 {
+    background-image: url(../images/promo3.png);
+}
+
+
+
+section.main2 aside {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+section.main2 .content {
+    margin: 10px;
+    background: no-repeat center top;
+    background-size: 550px 500px;
+    padding-top: 500px;
+    text-align: center;
+}
+
+
+section.main2 aside h3 a {
+    color: black;
+    text-decoration: none;
+}
+
+section.main2 aside h3 a:hover {
+    color: rgb(154, 52, 160);
+    /*text-decoration: underline; */
+}
+
+section.main2 aside .content.living1 {
+    background-image: url(../images/Living1.png);
+}
+
+section.main2 aside .content.living2 {
+    background-image: url(../images/Living2.png);
+}
+
+section.main2 aside .content.living3 {
+    background-image: url(../images/Living3.png);
+}
+
+section.main2 aside .content.living4 {
+    background-image: url(../images/Living4.png);
+}
+
+
+
+
+/* Section Atmosphere*/
+
+section.atmosphere {
+
+    height: 220px;
+    background: #f8bb1f url(../images/bestprice.png) no-repeat right bottom;
+    background-size: 200px 250px;
+    position: relative;
+
+}
+
+section.atmosphere article div.atm {
+    padding-top: 20px;
+    line-height: 1em;
+    margin: 0 0 30px 0;
+    color: #000;
+}
+
+/* membership */
+
+section.membership {
+    height: 450px;
+    background: rgb(244, 244, 240) url(../images/membership.png) no-repeat left bottom;
+    background-size: 600px 350px;
+    position: relative;
+    text-align: right;
+}
+
+section.membership aside .content {
+    padding-top: 100px;
+    width: 50%;
+    text-align: left;
+    margin-right: 10px;
+    float: right;
+}
+
+
+
+nav.Search {
+    background-color: #f8bb1f;
+    position: absolute;
+    top: 0px;
+    padding: 25px 0 0 0;
+    width: 100%;
+}
+
+nav.Search .search-container {
+    margin-left: 300px;
+
+}
+
+
+nav.Search input[type=text] {
+    padding: 5px;
+    margin-top: 1px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    width: 72%;
+    border: none;
+
+}
+
+
+nav.Search .search-container button {
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 2px;
+    background: #EA8000;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+nav.dropList {
+    background-color: #c89f2f;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    padding: 20px 0 0 0;
+    width: 100%;
+}
+
+nav.dropList::after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+nav.dropList ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0%;
+}
+
+nav.dropList ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav.dropList ul li a {
+    display: inline-block;
+    color: white;
+    font-size: medium;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+
+nav.dropList ul li a:visited {
+    color: #fff;
+}
+
+nav.dropList ul li:hover>ul {
+    display: block;
+}
+
+nav.dropList ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav.dropList ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #2b0306;
+    display: none;
+}
+
+nav.dropList ul ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Targeting top level Elements */
+/* This used to Target direct ul after and not Ul with li parents*/
+nav.dropList>ul {
+
+    padding-left: 200px;
+
+}
+
+nav.dropList>ul>li {
+
+    float: left;
+
+}
+
+nav.dropList>ul>li>a {
+
+    width: auto;
+    padding: 10px 20px 10px 20px
+}
+
+/*to indicate there is a drop down */
+nav.dropList a[aria-haspopup="true"]::after {
+
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff
+}
+
+/*Search bar*/
+
+
+/*
+nav>ul>li>a[aria-haspopup="true"] {
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    left: 20px;
+    right: auto;
+    bottom: 6px;
+}
+*/
+
+/* footer */
+footer {
+    font-size: .9em;
+    margin: 40px;
+    color: #999;
+}
+
+footer .content {
+    display: inline;
+    color: #777
+}
+
+footer a {
+    margin-left: 30px;
+    color: #777;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #777
+}
+
+footer a:hover {
+    color: rgb(39, 45, 144)
+}
+
+@media screen and (max-width: 1600px) {
+    section.main .content {
+        margin: 15px;
+        background: no-repeat center top;
+        padding-top: 200px;
+        background-size: 220px 220px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1400px) {
+    section.main .content {
+        margin: 15px;
+        background: no-repeat center top;
+        padding-top: 200px;
+        background-size: 200px 200px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1200px) {
+    section.main .content {
+        margin: 15px;
+        background: no-repeat center top;
+        padding-top: 200px;
+        background-size: 180px 180px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1000px) {
+    section.main .content {
+        margin: 15px;
+        background: no-repeat center top;
+        padding-top: 150px;
+        background-size: 150px 150px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1600px) {
+    section.main1 .content {
+        margin: 5px;
+        background: no-repeat center top;
+        background-size: 500px 200px;
+        padding-top: 250px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    section.main1 .content {
+        margin: 5px;
+        background: no-repeat center top;
+        background-size: 400px 180px;
+        padding-top: 250px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    section.main1 .content {
+        margin: 5px;
+        background: no-repeat center top;
+        background-size: 400px 150px;
+        padding-top: 250px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section.main1 .content {
+        margin: 5px;
+        background: no-repeat center top;
+        background-size: 300px 150px;
+        padding-top: 250px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    section.main2 .content {
+        margin: 10px;
+        background: no-repeat center top;
+        background-size: 500px 450px;
+        padding-top: 500px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    section.main2 .content {
+        margin: 10px;
+        background: no-repeat center top;
+        background-size: 450px 400px;
+        padding-top: 500px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    section.main2 .content {
+        margin: 10px;
+        background: no-repeat center top;
+        background-size: 400px 350px;
+        padding-top: 500px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section.main2 .content {
+        margin: 10px;
+        background: no-repeat center top;
+        background-size: 350px 300px;
+        padding-top: 500px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    section.membership {
+        height: 400px;
+        background: rgb(244, 244, 240) url(../images/membership.png) no-repeat left bottom;
+        background-size: 500px 300px;
+        position: relative;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    section.membership {
+        height: 350px;
+        background: rgb(244, 244, 240) url(../images/membership.png) no-repeat left bottom;
+        background-size: 450px 250px;
+        position: relative;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    section.membership {
+        height: 300px;
+        background: rgb(244, 244, 240) url(../images/membership.png) no-repeat left bottom;
+        background-size: 400px 200px;
+        position: relative;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section.membership {
+        height: 250px;
+        background: rgb(244, 244, 240) url(../images/membership.png) no-repeat left bottom;
+        background-size: 300px 150px;
+        position: relative;
+        text-align: right;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    section.membership aside .content {
+        padding-top: 80px;
+        width: 50%;
+        text-align: left;
+        margin-right: 10px;
+        float: right;
+    }
+}
+
+
+@media screen and (max-width: 1600px) {
+    .w3-content>img {
+        height: 500px;
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .w3-content>img {
+        height: 400px;
+        width: 1200px;
+    }
+}

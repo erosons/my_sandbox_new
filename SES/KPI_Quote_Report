@@ -1,0 +1,91 @@
+Qub.prospects.aggregate([
+    { $sort: { _id: -1 } },
+    { $unwind: '$quotes' },
+    {
+        $addFields: {
+            latestQuoteVersionId: {
+                $arrayElemAt: ['$quotes.quoteVersions', -1],
+            },
+        },
+    },
+    {
+        $addFields: {
+            quoteFacilitiesCount: {
+                $cond: {
+                    if: { $isArray: '$quotes.facilities' },
+                    then: { $size: '$quotes.facilities' },
+                    else: 0,
+                },
+            },
+            quoteVersionId: '$quotes.quoteVersions.version',
+            quoteNumber: '$quotes.quoteNumber',
+            quoteExpiresOn: '$quotes.expiresOn',
+            quoteEnrollBy: '$quotes.EnrollBy',
+            quoteAutoRefreshStatus: '$quotes.autoRefreshStatus',
+            quoteCreatedAt: '$quotes.createdAt',
+            quoteUpdatedAt: '$quotes.updatedAt',
+            quoteLDCList: '$quotes.quoteLDCList',
+            annualizedMWhs: '$quotes.annualizedMWhs',
+        },
+    },
+    {
+        $project: {
+            facilities: 0,
+            quotes: 0,
+            terms: 0,
+        },
+    },
+    {
+        $lookup: {
+            from: 'quoteversions',
+            localField: 'latestQuoteVersionId.version',
+            foreignField: '_id',
+            as: 'quoteVersion',
+        },
+    },
+    { $unwind: '$quoteVersion' },
+    {
+        $replaceWith: {
+            $mergeObjects: ['$$ROOT', '$quoteVersion'],
+        },
+    },
+    {
+        $project: {
+            facilities: 0,
+            quotes: 0,
+            terms: 0,
+            latestQuoteVersionId: 0,
+            quoteVersion: 0,
+            costComponentPassThroughs: 0,
+            sweetSpotPricing: 0,
+            rollupPricing: 0,
+            usageSummary: 0,
+        },
+    },
+    { 
+        $project: {
+            _id: 0,
+            ISO: 1,
+            quoteName: 1,
+            quoteNumber: 1,
+            versionNumber: 1,
+            brokerName: 1,
+            quoteFacilitiesCount: 1,
+            type: 1,
+            contractType: 1,
+            originatorName: 1,
+            analyst: 1,
+            contractStartDate: 1,
+            quoteExpiresOn: 1,
+            quoteAutoRefreshStatus: 1,
+            createdBy: 1,
+            quoteCreatedAt: 1,
+            quoteUpdatedAt: 1,
+            state: 1,
+            quoteLDCList: 1,
+            annualizedMWhs: 1,
+            prospectId: 1
+        } 
+    }
+])
+ 
