@@ -44,13 +44,15 @@ jobs:
           python -m pip install --upgrade pip
           cd $MONTE_CARLO_DIR
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   # Install dependencies using pip if requirements.txt exists
-      
-      - name: Configure Monte Carlo with API Key and Secret
-        run: |
-          montecarlo configure --api-key ${{ secrets.MONTECARLO_API_KEY }} --api-secret ${{ secrets.MONTECARLO_API_SECRET }}
 
-      # Run Monte Carlo monitor apply command
-      - name: Apply Monte Carlo monitors
+      # Run Monte Carlo monitor apply with environment variables
+      - name: Apply Monte Carlo Monitors
+        env:
+          MCD_DEFAULT_API_ID: ${{ secrets.MCD_DEFAULT_API_ID }}
+          MCD_DEFAULT_API_TOKEN: ${{ secrets.MCD_DEFAULT_API_TOKEN }}
+          # MC_MONITORS_NAMESPACE: ${{ secrets.MC_MONITORS_NAMESPACE }}
+          PROJECT_DIR: ${{ secrets.PROJECT_DIR }}
         run: |
-          montecarlo monitors apply --dry-run
-          montecarlo monitors apply
+          montecarlo monitors apply \
+            --project-dir ${MONTE_CARLO_DIR} \
+            --auto-yes
