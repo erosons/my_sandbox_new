@@ -1,0 +1,9 @@
+digraph G {
+	graph [rankdir=TB]
+	node [shape=ellipse]
+	firstSemester [label=firstSemester]
+	firstSemester -> "Course A"
+	firstSemester -> "Course B"
+	firstSemester -> "Course C"
+	firstSemester -> "Course D"
+}

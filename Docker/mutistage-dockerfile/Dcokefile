@@ -1,0 +1,26 @@
+# alias the first stage as build or any name you want
+FROM node:14-alpine as buildepla
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npn run build
+
+# Build the second stage
+
+FROM nginx:stable-alpine
+
+#Copy the build folder from the previous stage
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+
+

@@ -1,0 +1,53 @@
+name: Astro Deploy Workflow
+
+on:
+  push:
+    branches:
+      - DEV
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to deploy (test1, test2, test3)'
+        required: true
+        default: 'test1'
+
+jobs:
+  deploy-to-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Astro CLI
+        run: |
+          curl -sSL https://install.astronomer.io | sudo bash
+
+      - name: Deploy to Selected Test Environment
+        run: |
+          if [[ "${{ github.event.inputs.environment }}" == "test1" ]]; then
+            ASTRO_API_TOKEN="${{ secrets.ASTRO_API_TOKEN_TEST1 }}" \
+            astro deployment deploy --workspace-id test1 --deployment-id ${{ secrets.DEPLOYMENT_ID_TEST1 }}
+          elif [[ "${{ github.event.inputs.environment }}" == "test2" ]]; then
+            ASTRO_API_TOKEN="${{ secrets.ASTRO_API_TOKEN_TEST2 }}" \
+            astro deployment deploy --workspace-id test2 --deployment-id ${{ secrets.DEPLOYMENT_ID_TEST2 }}
+          elif [[ "${{ github.event.inputs.environment }}" == "test3" ]]; then
+            ASTRO_API_TOKEN="${{ secrets.ASTRO_API_TOKEN_TEST3 }}" \
+            astro deployment deploy --workspace-id test3 --deployment-id ${{ secrets.DEPLOYMENT_ID_TEST3 }}
+          fi
+
+  merge-to-prod:
+    if: github.ref == 'refs/heads/main'
+    needs: deploy-to-dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Astro CLI
+        run: |
+          curl -sSL https://install.astronomer.io | sudo bash
+
+      - name: Deploy to Production
+        run: |
+          ASTRO_API_TOKEN="${{ secrets.ASTRO_API_TOKEN_PROD }}" \
+          astro deployment deploy --workspace-id prod --deployment-id ${{ secrets.DEPLOYMENT_ID_PROD }}

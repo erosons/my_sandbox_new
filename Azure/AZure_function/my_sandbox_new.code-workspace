@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "my_sandbox_new",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"debug.internalConsoleOptions": "neverOpen"
+	}
+}

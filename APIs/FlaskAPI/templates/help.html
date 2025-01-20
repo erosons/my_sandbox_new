@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Courses Visualization
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid ms-auto" style="line-height: 1.35;background-color: rgb(49, 48, 48); font-family: 'Times New Roman', Times, serif;">
+    <p>
+        <h5 class="text-center">Welcome to the Prairie View A&M University Course and Career Choice Tracker Help Page</h6>
+        <br>
+        <h5><strong>Getting Started</strong></h5>
+        <br><br>
+
+        <h6><strong>For Students – How it works</strong></h6>
+        <br>
+
+        <ul>
+            <li><strong>Logging In:</strong> <br> To access the full features of the Tracker, log in with your registered credentials.</li>
+            <br>
+            <li>
+                <strong>Profile Creation:</strong> <br> As a new user, you'll have the option to create a profile or preview a list of profiles that match your career goals.<br>
+                This step allows you to customize your experience and receive personalized recommendations based on your career interests.
+            </li>
+        </ul>
+        <br>
+        <h5><strong>Using the Tracker</strong></h5>
+        <br>
+        <ul>
+            <li>
+                <strong>Dashboard Overview:</strong> <br> Upon creating a profile, you'll find a comprehensive view of your selected courses and prerequisites.
+            </li>
+            <br>
+            <li>
+                <strong>Career Exploration:</strong> <br> Navigate to the 'Career Exploration' section upon logging in as a first-time user and discover a wide range of career options.<br>
+                The Tracker matches these careers with courses, providing insights into your educational journey.
+            </li>
+            <br>
+            <li>
+                <strong>Course Planning:</strong> <br> In the 'Course Planning' section, you can update your courses as you complete each semester and track the number of course units.<br>
+                Track your progress toward completing your requirements and stay organized throughout your academic journey.
+            </li>
+            <br>
+            <li>
+                <strong>Prerequisite Waiver Request:</strong> <br> Use the 'Prerequisite Waiver Request' feature to request prerequisite waivers.
+                Provide information about the course prerequisites and a brief explanation of why you believe a waiver is necessary.
+            </li><br>
+            <li>
+            <strong>Submit for Approval:</strong> <br> Once the form is complete, your request is submitted for approval to your course advisor.
+            </li><br>
+            <li>
+                <strong>Check Status:</strong> <br> Monitor the status of your request on your dashboard. You'll be notified once a decision is made.
+                <br><br>
+            </li>
+
+        </ul>
+        <h6><strong>Course Advisors - How It Works:</strong> </h6>
+         <br>
+        <ul>
+            <li><strong>Logging In:</strong> <br> Log in using your credentials to access the Advisor Dashboard.</li>
+            <br>
+            <li>
+                <strong>Using the Tracker:</strong> <br> Once logged in, you'll be directed to your personalized dashboard. Click on the "Advisor Features" tab.
+            </li>
+            <br>
+            <li>
+                <strong>Prerequisite Waiver Requests:</strong> <br> Under "Prerequisite Waiver Approval," you'll find a list of pending student requests.
+            </li>
+            <br>
+            <li>
+                <strong>Review Requests:</strong> <br> Click on a student's name to view their request details, including the course in question and the reason for the waiver.
+            </li>
+            <br>
+            <li>
+                <strong>Approval/Denial Options:</strong> <br> After reviewing the request, you have the option to either approve or deny it. Provide additional comments if necessary.
+            </li>
+            <br>
+            <li>
+                <strong>Confirm Action:</strong> <br> Once you've made a decision, confirm your action. The student will be notified of your choice.
+            </li>
+            <br>
+            <li>
+                <strong>Documentation:</strong> <br> Keep track of approved and denied requests for your records. This can be valuable for future reference.
+            </li>
+        </ul>
+        <br><br>
+        <h6>Complaints, Feedback, Form</h6>
+          <br>
+        <ul>
+            <li>
+                <strong>Complaint Form:</strong> <br>  <br> If you encounter any issues or have specific complaints, please use our  <a href="{{ url_for('complain') }}">Complaint Form</a>.<br>
+                Your feedback is valuable, and we are committed to addressing your concerns promptly.
+            </li>
+        </ul>
+        <br>
+        <ul>
+            <li>
+                <strong>Course Registration Form:</strong> <a href="{{ url_for('download_complaint_form') }}"
+                    download="complaint_form.pdf"> Course Registration Form</a> <br><br>
+            </li>
+        </ul>
+        <p>
+            <strong>Need Further Assistance?</strong> <br> If you encounter any issues or require general technical assistance or have questions about the Prerequisite Waiver,
+            our support team is just a click away.<br> Use the "Complaint Form" section above for assistance.
+            We're here to help you navigate the Tracker and address any issues.
+        </p>
+        <br><br><br><br>
+    </p>
+</div>
+{% endblock %}

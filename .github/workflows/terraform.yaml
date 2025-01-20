@@ -1,0 +1,87 @@
+name: Terraform CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+env:
+  AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+  AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  KEY_VAULT_NAME: "your-keyvault-name"  # Replace with your actual Key Vault name
+
+
+# ---------------------
+# Jobs Section
+# ---------------------
+
+jobs:
+  terraform:
+    name: "Terraform Workflow"
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: "Checkout Code"
+        uses: actions/checkout@v2
+
+      # Step 2: Login to Azure
+      - name: "Login to Azure"
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}  # JSON secret for Azure login
+
+      # Step 3: Set up Azure CLI and authenticate for pulling Key Vault secrets
+      - name: "Setup Azure CLI"
+        run: |
+          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
+          az account set --subscription $AZURE_SUBSCRIPTION_ID
+
+      # Step 4: Pull secrets from Azure Key Vault and export them as environment variables
+      - name: "Fetch Secrets from Key Vault"
+        run: |
+          export TF_VAR_client_secret=$(az keyvault secret show --name "client-secret" --vault-name "$KEY_VAULT_NAME" --query "value" -o tsv)
+          export TF_VAR_client_id=$(az keyvault secret show --name "client-id" --vault-name "$KEY_VAULT_NAME" --query "value" -o tsv)
+          export TF_VAR_tenant_id=$(az keyvault secret show --name "tenant-id" --vault-name "$KEY_VAULT_NAME" --query "value" -o tsv)
+        env:
+          KEY_VAULT_NAME: ${{ env.KEY_VAULT_NAME }}
+
+      # Step 5: Install Terraform
+      - name: "Set up Terraform"
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: latest
+
+      # Step 6: Terraform Init
+      - name: "Terraform Init"
+        run: terraform init
+
+      # Step 7: Terraform Validate
+      - name: "Terraform Validate"
+        run: terraform validate
+
+      # Step 8: Terraform Plan
+      - name: "Terraform Plan"
+        run: terraform plan -out=tfplan
+
+      # Step 9: Generate Terraform Graph and Convert to PNG
+      - name: "Generate Terraform Graph"
+        run: |
+          terraform graph > graph.dot
+          sudo apt-get install graphviz
+          dot -Tpng graph.dot -o graph.png
+          
+      # Step 10: Upload Graph PNG as an Artifact (Optional)
+      - name: "Upload Terraform Graph"
+        uses: actions/upload-artifact@v2
+        with:
+          name: terraform-graph
+          path: graph.png
+
+      # Step 11: Terraform Apply (Only on push to main)
+      - name: "Terraform Apply"
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply "tfplan"

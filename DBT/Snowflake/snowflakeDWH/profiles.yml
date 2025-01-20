@@ -1,0 +1,13 @@
+snowflakeDWH:
+  outputs:
+    dev:
+      account: qbolsxy-pt61262
+      database: AIRBNB
+      password: ?
+      role: ACCOUNTADMIN
+      schema: RAW
+      threads: 1
+      type: snowflake
+      user: ?
+      warehouse: COMPUTE_WH
+  target: dev

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #fff; /* White background for the main page */
+        }
+        nav.navbar {
+            background-color: #233B60; /* Dark blue background for the navigation bar */
+        }
+        nav.navbar a.nav-link {
+            color: #fff; /* White text color for navigation links */
+            font-size: 12px; /* Font size 12px for navigation links */
+            font-weight: normal; /* Regular font weight for navigation links */
+        }
+        /* Aside Canvas (1/4 of the main page width) */
+        aside.container-fluid {
+            background-color: #233B60; /* Dark blue background for the aside canvas */
+            height: 100vh;
+            width: 25%;
+            float: left;
+        }
+        /* Sections within the Aside Canvas */
+        .section {
+            padding: 10px;
+            border-bottom: 1px solid #ccc; /* Horizontal line separator */
+            color: #fff;
+        }
+        /* Container for floated content */
+        .content-container {
+            float: right;
+        }
+        /* H4 elements within the container */
+        .content-container h4 {
+            margin: 0; /* Remove default margin */
+        }
+        /* Main Content (occupying 3/4 of the width) */
+        main.container-fluid {
+            width: 75%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Example Code -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+
+        <!-- Removed the sidebar toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Aside Canvas (1/4 of the main page width) -->
+<aside class="container-fluid">
+    <!-- Section 1 -->
+    <div class="section">
+        <div class="content-container">
+            <h4>Item 1</h4>
+            <h4>Item 2</h4>
+            <h4>Item 3</h4>
+        </div>
+        Section 1 Content
+    </div>
+    <!-- Section 2 -->
+    <div class="section">
+        <div class="content-container">
+            <h4>Item 1</h4>
+            <h4>Item 2</h4>
+            <h4>Item 3</h4>
+        </div>
+        Section 2 Content
+    </div>
+    <!-- Section 3 -->
+    <div class="section">
+        <div class="content-container">
+            <h4>Item 1</h4>
+            <h4>Item 2</h4>
+            <h4>Item 3</h4>
+        </div>
+        Section 3 Content
+    </div>
+    <!-- Section 4 -->
+    <div class="section">
+        <div class="content-container">
+            <h4>Item 1</h4>
+            <h4>Item 2</h4>
+            <h4>Item 3</h4>
+        </div>
+        Section 4 Content
+    </div>
+</aside>
+
+<!-- Main Content (occupying 3/4 of the width) -->
+<main class="container-fluid">
+    <!-- Main content goes here -->
+    This is the main content.
+</main>
+
+<!-- Bootstrap JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

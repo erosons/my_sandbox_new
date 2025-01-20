@@ -1,0 +1,116 @@
+db.prospects.aggregate([{$sort:{_id:-1}},
+                       {$unwind:'$quotes'},
+                       {$project:{
+                           _id:1,accountName:1,
+                           ISO:1,brokerName:1,
+                           terms:1,state:1,
+                             fee:1,quotes:1,
+                             salesperson2Name:1,originatorName:1
+                             }
+                        },
+                        {$addFields:{
+                           
+                             Prospect:'$accountName',
+                             Broker:'$brokerName',
+                             Salesperson1:'$originatorName',
+                             Salesperson2:'$originatorName',
+                             Utility:'$quotes.quoteLDCList',
+                             MWhs:'$quotes.annualizedMWhs',
+                             Enroll_by:'$quotes.EnrollBy',
+                             QuoteNumber:'$quotes.quoteNumber',
+                             Expiration_date:'$quotes.expiresOn',
+                             quoteVersion: {
+                                      $cond: {
+                                      if: { $isArray: '$quotes.quotesVersions' },
+                                      then: { $size: '$quotesVersions' },
+                                       else: 0,
+                                       },
+                                     },
+                             latestQuoteVersionId:{
+                                 $arrayElemAt: ['$quotes.quoteVersions', -1]
+                            
+                             },
+                             Accounts: {
+                                $cond: {
+                               if: { $isArray: '$quotes.facilities' },
+                               then: { $size: '$quotes.facilities' },
+                               else: 0,
+                                 },
+                            },
+                           },
+                          },
+                        {$project:{
+                               quotes:0,
+                               facilities:0,
+                               terms:0,
+                               accountName:0,
+                             }
+                         },
+                           {
+                        $lookup: {
+                           from: 'quoteversions',
+                           localField: 'latestQuoteVersionId.version',
+                           foreignField: '_id',
+                         as: 'quoteVersion',
+                          },
+                       }, 
+                       {$unwind:'$quoteVersion'},
+                       {
+                         $replaceWith: {
+                             $mergeObjects: ['$$ROOT', '$quoteVersion'],
+                      },
+                       },
+                       {$project:{
+                           _id:1,
+                           IS0:1,
+                           state:1,
+                           fee:1,
+                           salesperson2Name:1,
+                           Prospect:1,
+                           Broker:1,
+                           Utility:1,
+                           MWhs:1,
+                           Enroll_by:1,
+                           QuoteNumber:1,
+                           Expiration_date:1,
+                           Accounts:1,
+                           VersionNumber:1,
+                           prospectid:1,
+                           quoteName:1,
+                           terms:1
+                       } 
+                       },
+                       {$unwind:'$terms'},
+                        {
+                         $replaceWith: {
+                             $mergeObjects: ['$$ROOT', '$terms']}},
+                        {$project:{
+                           _id:1,
+                           IS0:1,
+                           state:1,
+                           fee:1,
+                           salesperson2Name:1,
+                           Prospect:1,
+                           Broker:1,
+                           Utility:1,
+                           MWhs:1,
+                           Enroll_by:1,
+                           QuoteNumber:1,
+                           Expiration_date:1,
+                           Accounts:1,
+                           VersionNumber:1,
+                           prospectid:1,
+                           quoteName:1,
+                           term:1,
+                           stateDate:1,
+                           adjustedFixedPriceAllIn:1,
+                           adjustedFixedPriceWithCapPT:1,
+                           adjustedIndexAdderllIn:1,
+                           adjustedIndexAdderWithCapPT:1,
+                           adjustedLoadFollowingEnergyOnly:1
+                       } 
+                       },
+                                 
+                       
+                       ])
+                       

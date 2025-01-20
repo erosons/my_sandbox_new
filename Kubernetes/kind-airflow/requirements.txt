@@ -1,0 +1,7 @@
+databricks-sdk
+apache-airflow-providers-apache-spark
+apache-airflow-providers-snowflake
+apache-airflow-providers-common-sql
+msal
+databricks-connect
+smartsheet-python-sdk==3.0.4

@@ -1,0 +1,24 @@
+# Bandit configuration
+
+# Exclude specific directories from the analysis
+exclude_dirs:
+  - path/to/file
+
+# (optional) List included tests here
+tests:
+  - B998
+
+# (optional) List skipped tests here
+skips:
+  - B101
+  - B601
+
+# Specify target files for analysis
+targets:
+  - custom_bandit_checks.py
+
+# Specify severity levels
+bandit_severities:
+  LOW: 1
+  MEDIUM: 3
+  HIGH: 5

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+body {
+  background-color: #252222;
+}
+
+;
+
+input {
+  width: 100%;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  height: 15px;
+  padding: 22px;
+  margin: 1px 0px 0;
+  display: block;
+  border: none;
+  background: #5755559e;
+}
+
+button {
+  background-color: #0e8258;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 20;
+}
+
+.signupbtn {
+  float: left;
+  width: 100%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+
+  position: fixed;
+  /* Stay in place */
+  /*z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  padding-top: 1px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 5px solid #888;
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 30px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* footer */
+footer {
+  padding-top: 750px;
+  font-size: .9em;
+  margin: 40px;
+  color: #999;
+}
+
+footer .content {
+
+  display: inline;
+  color: #777
+}
+
+footer a {
+
+  margin-left: 20px;
+  color: #777;
+  text-decoration: none;
+}
+
+footer a:visited {
+  color: #777
+}
+
+footer a:hover {
+  color: rgb(39, 45, 144)
+}

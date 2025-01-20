@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)https://cdn.flashtalking.com/98209/2877112/DIGI_BUS_BDL_OFFACQ_ENG_3490TP111111BGCNOCRE1000001200v1_GETNOW_3490TP_HTML_160x600.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style></style>
+    <!-- <title>COMCAST</title> -->
+
+    <style>
+        #borderDiv {position: absolute; top: 0px; left: 0px; width: 160px; height: 600px; background-color: transparent; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 1px solid #999999; z-index: 402; pointer-events: none; }
+        #preloader{ position:absolute; width:32px; height:auto; left:65px; top:280px; }
+    </style>
+   <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <script src="./banner.js.download"></script>
+</head>
+<body onload="init()">
+    <div id="container" style="cursor: pointer;">
+
+
+         <div id="BG" class="fade" style="opacity: 1;"><img src="./bg.jpg" width="160px" height="600px"></div>
+          <div id="frame1" style="visibility: inherit; opacity: 1;">
+            <div id="text1" class="text" style="opacity: 1;"><img src="./text1.png" width="160px" height="600px"></div>
+            <div id="priceOffer">
+	            <div id="textShadow" class="text" style="opacity: 1;"><img src="./textShadow.jpg" width="160px" height="84px"></div>
+	            <div id="dollar_sign" style="opacity: 1;">$</div>
+	            <div id="cents" style="opacity: 1;">90</div>
+	            <div id="per_month" style="opacity: 1;">more per month</div>
+	            <div id="number_mask" style="opacity: 1;">
+	                <div id="sign_mask" style="background-position: 50px 0px;">$</div>
+	                <div id="count_mask" style="background-position: 150px 0px;">34</div>
+	                <div id="cents_mask" style="background-position: 150px 0px;">90</div>
+	            </div>
+	            <div id="countDown" class="count" style="opacity: 1;"><span id="number">34</span></div>
+            </div>
+            <div id="text3" class="text" style="opacity: 1;"><img src="./text3.png" width="160px" height="600px"></div>
+        </div>
+        <img src="./preloader.gif" id="preloader" style="display: none;">
+<!--        <div id="preloader">Loading...</div>-->
+         <div id="cta" class="booknow-cta" style="opacity: 1;">
+<!--             <img  id="ntestover" src = "cta.png" width="117px" height="30px">-->
+             <img id="hover" src="./cta_hover.png" width="117px" height="30px">
+        </div>
+        <div id="ie_cta" class="booknow-cta">
+<!--            <img id="ie_ntestover"src = "ie_cta.png" width="117px" height="30px">-->
+            <img id="ie_hover" src="./ie_cta_hover.png" width="117px" height="30px">
+        </div>
+            <div id="logo" style="opacity: 1;"><img src="./comcastLogo.png" width="160px" height="600px"></div>
+         <div id="beyond_logo" style="opacity: 0;"><img src="./beyond_logo.png" width="160px" height="600px"></div>
+            <div id="maskCta">
+                <div id="sheen" style="opacity: 0.7; transform: matrix(1, 0, 0, 1, 30, 0);"></div>
+            </div>
+        <div id="borderDiv"></div>
+        <div id="ctaHotSopt"></div>
+    </div>
+
+            <script src="./TweenMax.min.js.download"></script>
+        <script src="./html5API.js.download"></script>
+         <script>
+        if(myFT.$('#container').length > 0){ var container = myFT.$('#container') } else if(myFT.$('.banner-wrapper').length > 0){ var container =  myFT.$('.banner-wrapper'); } else if(myFT.$('#animation_container').length > 0){ var container =  myFT.$('#animation_container'); } else if(myFT.$('#banner').length > 0){ var container =  myFT.$('#banner');} else if(myFT.$('#content').length > 0){ var container =  myFT.$('#content');} else if(myFT.$('#bg-exit').length > 0){ var container =  myFT.$('#bg-exit');};
+   //myFT.applyClickTag(container,1);
+        </script>
+        <script>
+            myFT.on("instantads", function(){
+                myFT.require(["banner.js"], function(){
+                    if (typeof startAd !== "undefined") {startAd();}
+                });
+                myFT.applyClickTag(container,1, myFT.instantAds.clickTag_URL);
+            });
+        </script>
+
+
+</body></html>

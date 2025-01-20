@@ -1,0 +1,60 @@
+# write a persistence volume claim for the kubernetes volume
+# Claim  must exist in the same namespace as the as the POD using the Claim.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: my-storage-class
+  selector:
+    matchLabels:
+      release: "stable"
+      environment: "production"
+---
+# wite pods useing persistence volume claim
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  containers:
+  - name: example-pod
+    image: nginx
+    volumeMounts:
+    - mountPath: /var/www/html
+      name: example-pv
+  volumes:
+  - name: example-pv
+    persistentVolumeClaim:
+      claimName: example-pvc
+
+---
+# wite pods using multiple persistence volume claim
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  containers:
+  - name: example-pod
+    image: nginx
+    volumeMounts:
+    - mountPath: /var/www/html
+      name: example-pv
+    - mountPath: /var/lib/mysql
+      name: example-pv2
+  volumes:
+  - name: example-pv
+    persistentVolumeClaim:
+      claimName: example-pvc
+  - name: example-pv2
+    persistentVolumeClaim:
+      claimName: example-pvc2
+
+```

@@ -1,0 +1,35 @@
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:derby://localhost/metastore?createDatabaseIfNotExist=true</value>
+</property>
+
+<property>
+     <name>datanucleus.autoCreateSchema</name>
+     <value>false</value>
+     <description>Creates necessary schema on a startup if one doesn't exist </description>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionDriverName</name>
+  <value>com.derby.jdbc.Driver</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionUserName</name>
+  <value>root</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionPassword</name>
+  <value>root</value>
+</property>
+
+<property>
+  <name>datanucleus.autoCreateSchema</name>
+  <value>true</value>
+</property>
+
+<property>
+  <name>datanucleus.fixedDatastore</name>
+  <value>true</value>
+</property>

@@ -1,0 +1,11 @@
+# Start with a base Python image
+FROM python:3.8-slim-buster
+
+# Install TensorFlow
+RUN pip install tensorflow==2.4.1
+
+# Add your training script
+COPY train.py /opt/ml/code/train.py
+
+# Set the default command to execute the training script
+CMD ["python", "/opt/ml/code/train.py"]

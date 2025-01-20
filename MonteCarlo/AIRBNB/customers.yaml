@@ -1,0 +1,24 @@
+namespace: learning
+montecarlo: 
+ custom_sql:
+  - name: Customer table Unique test
+    description: Our first customer table test code
+    sql: |
+      SELECT count(*) FROM AIRBNB.DL_NORTHWIND.Customers
+      where ID is NULL
+    comparisons: 
+    - type: threshold  # required
+      operator: GT
+      threshold_value: 0.0
+    schedule:
+      type: fixed
+      start_time: "2024-09-25T05:50:00"
+      interval_minutes: 720
+ field_health: 
+    - table: airbnb:dl_northwind.customers
+      name: field_health_test_monitor
+      description: Demension Tracking
+      schedule:
+        type: fixed
+        start_time: "2024-09-25T05:50:00"
+        interval_minutes: 60

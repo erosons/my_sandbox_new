@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Courses Visualization
+{% endblock %}
+
+{% block ul %}
+<a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-8 offset-md-2">
+            <br>
+            <h6 class="text-center" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">The view is based on {{selected_category}} major and {{selected_subcategory}} careerPath 
+                <br> <p >  The graph below indicates Courses by semester and the course unit</p>
+            </h6>
+             <br>
+            <!-- Embed the interactive SVG graph directly into the HTML -->
+            <div class="container text-center shadow-sm">
+                {{ graph_html | safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html2| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html3| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html4| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html5| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html6| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html7| safe }}
+            </div>
+            <br><br>
+            <div class="container text-center shadow-sm">
+                {{ graph_html8| safe }}
+            </div>
+        </main>
+
+    </div>
+</div>
+
+
+{% endblock %}

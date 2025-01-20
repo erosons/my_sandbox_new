@@ -1,0 +1,33 @@
+{
+    "name": "Ubuntu",
+    // dockerfile: Dockerfile imaage
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:1-3.12",
+    //Features to be installed
+    "features": {
+        "git": true,
+        "ghcr.io/staurtleeks/dev-container-features/azure-cli-persistent:0": {
+            "persisted": true
+        }
+    },
+    "runArgs": [
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock"
+    ],
+    //Shell to be used in the container
+    "postCreateCommand": "pip3 install -r requirements.txt",
+    "customization": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            //Vscode extensions to be installed
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}

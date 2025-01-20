@@ -1,0 +1,6 @@
+SELECT "_id", accountName, opportunityName, brokerName, originatorName, createdOn, createdBy, updatedOn, updatedBy, facilities, terms, "__v", usageRequest, fee, margin, type, movedToDW, contractStartDate, status, ISO, analyst, broker2ContactName, brokerContactName, contractType, opportunityType, requiresSalesforceUpdate, salesforceId, state, quotes, nested_0.quotes.quoteVersions AS quotes_Version, nested_0.quotes.quoteNumber AS quotesNumber, dealType, dueDate, receivedDate, subcontractType, broker2Name, salesperson2Name, firstPricedDate, salesperson2Percent, broker2Fee
+FROM (
+  SELECT "_id", accountName, opportunityName, brokerName, originatorName, createdOn, createdBy, updatedOn, updatedBy, facilities, terms, "__v", usageRequest, fee, margin, type, movedToDW, contractStartDate, status, ISO, analyst, broker2ContactName, brokerContactName, contractType, opportunityType, requiresSalesforceUpdate, salesforceId, state, flatten(quotes) AS quotes, dealType, dueDate, receivedDate, subcontractType, broker2Name, salesperson2Name, firstPricedDate, salesperson2Percent, broker2Fee
+  FROM "@test"."Odin VDS ".Prospects
+) nested_0
+where nested_0.quotes.quoteNumber = 'ISONE_1181'

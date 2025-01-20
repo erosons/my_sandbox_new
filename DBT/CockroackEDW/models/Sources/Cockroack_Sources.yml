@@ -1,0 +1,10 @@
+version: 2
+sources:
+
+  - name: Cockroack
+    database: CockroackEDW
+    schema: dbo
+    tables:
+      - name: Customers_DB_1
+      - name: Customers_DB_2
+      - name: Customers_DB_3
