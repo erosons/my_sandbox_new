@@ -34,3 +34,14 @@ variable "container_name" {
   description = "Name of the storage container for Unity Catalog"
   type        = string
 }
+
+variable subscription_id {
+  description = "Azure subscription ID"
+  type        = string
+}
+
+variable "secret_scope_name" {
+  description = "Name of the secret scope to create in Databricks"
+  type        = string
+  
+}

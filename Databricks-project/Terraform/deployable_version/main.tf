@@ -41,7 +41,7 @@ resource "databricks_metastore" "this" {
     owner         = "uc admins"
     region        = var.region
     force_destroy = true
-    depends_on    = [azurerm_storage_account.databricks_storage]
+    depends_on    = [azurerm_storage_account.databricks_storage, azurerm_storage_container.this]
 }
 
 resource "databricks_metastore_data_access" "this" {
@@ -56,11 +56,17 @@ resource "databricks_metastore_data_access" "this" {
     azurerm_databricks_access_connector.this]
 }
 
+#####################################################
+// Assign the metastore to the Databricks workspace
+// This allows the workspace to use the metastore for Unity Catalog.
+// The metastore must be created before it can be assigned to the workspace.
+
 resource "databricks_metastore_assignment" "this" {
   metastore_id = databricks_metastore.this.id
   workspace_id = azurerm_databricks_workspace.this.id
   depends_on   = [databricks_metastore_data_access.this]
 }
+
 
 
 #####################################################
