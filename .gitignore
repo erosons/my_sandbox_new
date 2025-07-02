@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.tfvars
 
 # C extensions
 *.so
@@ -151,3 +152,4 @@ Databricks-project/terrafform/databricks/components.tf/testcase/terraform.tfstat
 Databricks-project/terrafform/databricks/test-cli-approach/.terraform.lock.hcl
 *.tfstate
 Databricks-project/Databricks_Platform_Admin/terrafform/databricks/test-cli-approach-quick-deploy/.terraform.lock.hcl
+Databricks-project/Terraform/deployable_version/terraform.tfvars
