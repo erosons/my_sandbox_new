@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    sensor_ingest_scd1:
+      name: "Sensor Ingest - SCD1 Update"
+      tasks:
+        - task_key: scd1_task
+          notebook_task:
+            notebook_path: "/Shared/scd1_ingest"
+            base_parameters:
+              bucket: "{{var.bucket}}"
+              key: "{{var.key}}"
+          job_cluster_key: scd1_cluster
+      job_clusters:
+        - job_cluster_key: scd1_cluster
+          new_cluster:
+            spark_version: 13.3.x-scala2.12
+            num_workers: 2
+            node_type_id: i3.xlarge
+            aws_attributes:
+              availability: SPOT
