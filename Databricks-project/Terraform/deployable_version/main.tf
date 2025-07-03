@@ -1,5 +1,29 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+    }
+    databricks = {
+      source = "databricks/databricks"
+      version = "~> 1.34.0" # Use the latest stable version or your required version
+    }
+  }
+}
+
+#####################
+#Authentication layer
+#####################
+
+provider "azurerm" {
+  features {}
+  subscription_id = var.subscription_id
+
+}
+
+
 ################################
-# # The data "azurerm_client_config" "current" block retrieves information about the authenticated Azure account, such as tenant_id and object_id.
+# # The data "azurerm_client_config" "current" block retrieves 
+## information about the authenticated Azure account, such as tenant_id and object_id.
 ################################
 
 data "azurerm_client_config" "current" {}
@@ -22,10 +46,10 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_databricks_workspace" "this" {
   location            = var.region
-  name                = "${var.workspace_name}-${random_id.number.result}"
-  resource_group_name = azurerm_resource_group.rg.name
+  name                = "${var.workspace_name}-${random_integer.number.result}"
+  resource_group_name = var.resource_group
   sku                 = var.sku_value
-  tags                = local.tags
+  tags                = var.tags
 }
 
 
@@ -41,7 +65,7 @@ resource "databricks_metastore" "this" {
     owner         = "uc admins"
     region        = var.region
     force_destroy = true
-    depends_on    = [azurerm_storage_account.databricks_storage, azurerm_storage_container.this]
+    depends_on    = [azurerm_storage_account.this, azurerm_storage_container.this]
 }
 
 resource "databricks_metastore_data_access" "this" {

@@ -3,7 +3,7 @@
 
 resource "databricks_secret_scope" "db_secret_scp"{
   
-  name = "${var.secret_scope_name}-${random_id.number.result}"
+  name = "${var.secret_scope_name}-${random_integer.number.result}"
 
   keyvault_metadata {
     resource_id =azurerm_key_vault.keyvault.id
@@ -14,7 +14,7 @@ resource "databricks_secret_scope" "db_secret_scp"{
 
 resource "azurerm_key_vault_secret" "secret" {
     name = "azuredb-test"
-    value = azurerm_storage_account.databricks_storage.primary_access_key
+    value = azuread_service_principal.this.client_id
     key_vault_id = azurerm_key_vault.keyvault.id
 
     depends_on = [ databricks_secret_scope.db_secret_scp ]

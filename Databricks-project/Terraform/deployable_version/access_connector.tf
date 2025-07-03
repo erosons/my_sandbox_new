@@ -1,6 +1,6 @@
 
 resource "azurerm_databricks_access_connector" "this" {
-  name                = "${var.dbx_access_connetor}-${random_integer.example.result}"
+  name                = "${var.dbx_access_connetor}-${random_integer.number.result}"
   resource_group_name = var.resource_group
   location            = var.region
   identity {

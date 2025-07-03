@@ -1,9 +1,9 @@
 
 # Creates an Azure Key Vault to securely manage secrets like the storage account keys.
 resource "azurerm_key_vault" "keyvault" {
-  name                        = "${var.keyvault_name}-${random_id.number.result}"
-  resource_group_name      = data.azurerm_resource_group.rg.name
-  location                 = data.azurerm_resource_group.rg.location
+  name                        = "${var.keyvault_name}-${random_integer.number.result}"
+  resource_group_name      = var.resource_group
+  location                 = var.region
   enabled_for_disk_encryption = true
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   soft_delete_retention_days  = 7

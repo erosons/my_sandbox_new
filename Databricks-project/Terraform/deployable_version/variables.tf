@@ -1,7 +1,3 @@
-variable "group_name" {
-  type        = string
-  description = "Name of the group to create"
-}
 
 variable "tags" {
   type        = map(string)
@@ -59,4 +55,10 @@ variable "app_name" {
 variable "app_secret_name" {
   description = "Name of the application secret to create in Azure AD"
   type        = string
+}
+
+variable "sku_value" {
+  description = "SKU value for the Databricks workspace"
+  type        = string
+  default     = "premium"
 }
