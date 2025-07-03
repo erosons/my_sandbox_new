@@ -105,6 +105,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.terrafform/
 env/
 venv/
 ENV/
@@ -134,6 +135,7 @@ Databricks/spark-submit-dbundled/2024-09-30-1.json.gz
 2015-01-01-15.json.gz
 2015-01-01-16.json.gz
 *.tfvars
+File Databricks-project/Terraform/deployable_version/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.35.0/linux_amd64/terraform-provider-azurerm_v4.35.0_x5
 Databricks-project/terrafform/databricks/components.tf/testcase/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.10.0/linux_amd64/terraform-provider-azurerm_v4.10.0_x5
 Databricks-project/terrafform/databricks/test-cli-approach/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.9.0/linux_amd64/terraform-provider-azurerm_v4.9.0_x5
 Databricks-project/terrafform/databricks/test-cli-approach/.terraform/providers/registry.terraform.io/databricks/databricks/1.58.0/linux_amd64/terraform-provider-databricks_v1.58.0
@@ -153,3 +155,5 @@ Databricks-project/terrafform/databricks/test-cli-approach/.terraform.lock.hcl
 *.tfstate
 Databricks-project/Databricks_Platform_Admin/terrafform/databricks/test-cli-approach-quick-deploy/.terraform.lock.hcl
 Databricks-project/Terraform/deployable_version/terraform.tfvars
+Databricks-project/Terraform/deployable_version/tfplan
+Databricks-project/Terraform/deployable_version/.terraform.lock.hcl
