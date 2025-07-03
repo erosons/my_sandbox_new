@@ -66,22 +66,3 @@ resource "databricks_metastore_assignment" "this" {
   workspace_id = azurerm_databricks_workspace.this.id
   depends_on   = [databricks_metastore_data_access.this]
 }
-
-
-
-#####################################################
-### Outputs layer
-#####################################################
-
-output "resource_group_name" {
-  value = azurerm_resource_group.rg.name
-}
-
-output "databrick_workspace" {
-  value = azurerm_databricks_workspace.this.id
-}
-
-output "databrick_metastore_data" {
-  value = databricks_metastore_data_access.this.id
-}
-

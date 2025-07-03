@@ -45,3 +45,18 @@ variable "secret_scope_name" {
   type        = string
   
 }
+
+variable "keyvault_name" {
+  description = "Name of the Azure Key Vault to create"
+  type        = string
+}
+
+variable "app_name" {
+  description = "Name of the application to create in Azure AD"
+  type        = string
+}
+
+variable "app_secret_name" {
+  description = "Name of the application secret to create in Azure AD"
+  type        = string
+}

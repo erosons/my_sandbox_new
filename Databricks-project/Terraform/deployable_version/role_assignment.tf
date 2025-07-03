@@ -11,3 +11,29 @@ resource "azurerm_role_assignment" "access_connector_contributor" {
 }
 
 
+# 4. Optional: Assign Role service principal on a Storage Account
+# Replace with your actual resource
+resource "azurerm_role_assignment" "storage_acct_spn_contributor" {
+  scope                = azurerm_storage_account.this.id
+  role_definition_name = "Storage Blob Data Contributor"
+  principal_id         = azuread_service_principal.this.id
+
+  depends_on = [
+    azurerm_storage_account.this,
+    azuread_service_principal.this
+  ]
+}
+
+
+# 4. Optional: Assign Role service principal on a Storage Account
+# Replace with your actual resource
+resource "azurerm_role_assignment" "workspace_spn_contributor" {
+  scope                = azurerm_databricks_workspace.this.id
+  role_definition_name = "Contributor"
+  principal_id         = azurerm_storage_account.this.id
+  depends_on = [
+    azurerm_storage_account.this,
+    azuread_service_principal.this
+  ]
+}
+

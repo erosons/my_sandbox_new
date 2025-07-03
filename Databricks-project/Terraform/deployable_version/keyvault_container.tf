@@ -1,7 +1,7 @@
 
 # Creates an Azure Key Vault to securely manage secrets like the storage account keys.
 resource "azurerm_key_vault" "keyvault" {
-  name                        = "azuredbkeylv2027"
+  name                        = "${var.keyvault_name}-${random_id.number.result}"
   resource_group_name      = data.azurerm_resource_group.rg.name
   location                 = data.azurerm_resource_group.rg.location
   enabled_for_disk_encryption = true
@@ -21,3 +21,22 @@ resource "azurerm_key_vault_access_policy" "kv" {
   
 }
 
+
+# put the storage account key in the key vault
+resource "azurerm_key_vault_secret" "app_id" {
+  name         = "storage-account-key"
+  value        = azuread_service_principal.this.client_id
+  key_vault_id = azurerm_key_vault.keyvault.id
+
+  depends_on = [azuread_service_principal.this, azurerm_key_vault.keyvault]
+}
+
+
+# put the storage account key in the key vault
+resource "azurerm_key_vault_secret" "app_secret" {
+  name         = "storage-account-key"
+  value        = azuread_application_password.this.id
+  key_vault_id = azurerm_key_vault.keyvault.id
+
+   depends_on = [azuread_application_password.this, azurerm_key_vault.keyvault]
+}
