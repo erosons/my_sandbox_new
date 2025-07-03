@@ -1,1 +1,0 @@
-Dependence installation Wheel => https://www.lfd.uci.edu/~gtestlke/pythonlibs/#pyodbc

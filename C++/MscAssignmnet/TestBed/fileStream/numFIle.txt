@@ -1,4 +1,0 @@
-100
-200
-three Hundred
-400

@@ -1,1 +1,0 @@
-bcp [Database].[dbo].[Table] out outfileName -c -S "ServerName" -U "userName" -P "JPassword" -b batchsize
