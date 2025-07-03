@@ -1,0 +1,17 @@
+namespace: learning
+montecarlo: 
+ custom_sql:
+  - name: Duplicate products_code check
+    description: Product DQ
+    sql: |
+      SELECT product_code, count(*) FROM AIRBNB.DL_NORTHWIND.products p
+      group by product_code
+      having count(*) >1
+    comparisons: 
+    - type: threshold  # required
+      operator: GT
+      threshold_value: 0.0
+    schedule:
+      type: fixed
+      start_time: "2024-09-25T05:50:00"
+      interval_minutes: 720

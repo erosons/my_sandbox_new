@@ -1,0 +1,51 @@
+# to import the module for abstract creation
+from abc import ABC, abstractmethod
+
+
+class UserControl(ABC):     # Make the stream inherit the class ABC
+
+    @abstractmethod  # define an abstract to be used by other class in different forms ()
+    def showlist(self):
+        pass
+
+#  Creating an Inheritance
+
+
+class RadioLst(UserControl):
+    def showlist(self):     # form 1
+        print("This is a radiolist")
+
+
+class Droplist(UserControl):
+    def showlist(self):  # form 2
+        print("This is a DropList")
+
+
+class Sliderbar(UserControl):
+    def showlist(self):  # form 3
+        print("This is a Sliderbar")
+
+# Implementation 1
+
+
+def ButtonType(button):  # This functions take all the different forms of abstractmethod excuted in the subclasses and implment them as they are passed
+    button.showlist()   # This called polymorphism
+
+# Implementation 2
+
+
+def ButtonTypes(buttons):  # This functions take all the different forms of abstractmethod excuted in the subclasses and implment them as they are passed
+ # *button  will only return a tuple
+ # buttons can return a list
+    for buttom in buttons:
+        buttom.showlist()   # This called polymorphism
+
+
+button1 = RadioLst()
+button2 = Droplist()
+button3 = Sliderbar()
+
+ButtonType(button1)
+ButtonType(button2)
+ButtonType(button3)
+ButtonTypes([button1, button2, button3])

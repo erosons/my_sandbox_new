@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CRRHistoricalForecast:historicalForecastData xmlns:xsi="http://www.w3.org/2002/XMLSchema-instance" xmlns:CRRHistoricalForecast="http://crr.caiso.org/XXX/xml" xsi:schemaLocation="http://XXX.org/download/xml https://FSAPJBOS9:11107/crr/download/xml/mui/XXX.xsd">
+ <CRRHistoricalForecast:items>
+    <CRRHistoricalForecast:itemHistoricalForecastData>
+      <CRRHistoricalForecast:Name>111</CRRHistoricalForecast:Name>
+      <CRRHistoricalForecast:Name.1>D_PEE_APEX</CRRHistoricalForecast:Name.1>
+      <CRRHistoricalForecast:Output>Predicted</CRRHistoricalForecast:Output>
+      <CRRHistoricalForecast:date>5/1/24</CRRHistoricalForecast:date>
+      <CRRHistoricalForecast:timingEnding>1</CRRHistoricalForecast:timingEnding>
+      <CRRHistoricalForecast:loadType>Output Load</CRRHistoricalForecast:loadType>
+      <CRRHistoricalForecast:mwQuantity>2.47549238</CRRHistoricalForecast:mwQuantity>
+    </CRRHistoricalForecast:itemHistoricalForecastData>
+  </CRRHistoricalForecast:items>
+</CRRHistoricalForecast:historicalForecastData>

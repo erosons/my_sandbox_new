@@ -1,0 +1,14 @@
+# write a persistence volume claim for the kubernetes volume
+# Claim  must exist in the same namespace as the as the POD using the Claim.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+

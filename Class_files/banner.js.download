@@ -1,0 +1,181 @@
+
+var container, ctaHotSopt, isIE=false;
+
+var textArray=[ "#text1a", "#text1b", "#text2a", "#text2b",  "#text3a", "#text3b", "#text4a", "#text5a", "#text5b", "#text6a"];
+function init() {
+  prepareAssets();
+  document.getElementById("preloader").style.display = "block";
+
+    //if browser is ie
+    if(detectIE()>0){
+        isIE = true;
+    }else{
+        isIE= false;
+    }
+}
+
+function prepareAssets() {
+
+    ctaHotSopt = document.getElementById("ctaHotSopt");
+
+    TweenLite.set("#frame1",{autoAlpha:1});
+    TweenLite.set(sheen,{x:'30px',alpha:.7})
+    TweenLite.set([dollar_sign, cents, per_month, number_mask],{alpha:0})
+    adVisibilityHandler();
+
+
+}
+
+
+//Set All Elements
+function adVisibilityHandler() {
+
+    TweenLite.delayedCall(0, frame1);
+
+
+
+}
+
+/**
+ * detect IE
+ * returns version of IE or false, if browser is not Internet Explorer
+ */
+function detectIE() {
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+       // Edge (IE 12+) => return version number
+       return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+
+    // other browser
+    return false;
+}
+
+
+
+
+
+var counting = false;
+//var flip2Time = 3.4;
+// **************************************
+// **** FRAME 1 ANIMATION
+// **************************************
+
+function frame1(){
+    document.getElementById("preloader").style.display = "none";
+
+     TweenLite.to("#BG", 0.1 ,{alpha:1, delay:0, ease:Quad.easeOut});
+     TweenLite.to("#text1", 0.5 ,{alpha:1, delay:0.2, ease:Quad.easeOut});
+     TweenLite.to("#text3", 0.3 ,{alpha:1, delay:.7});
+     TweenLite.to([countDown, cents, per_month], 0.3 ,{alpha:1, delay:0.7})
+     TweenLite.to("#logo",0.3,{alpha:1,delay:.7});
+
+    TweenLite.delayedCall(1,function(){
+        start(99);
+    })
+
+    if(isIE==true)
+    {
+      TweenLite.to(ie_cta,0.3,{alpha:1,delay:.7});
+    }
+    else
+    {
+      TweenLite.to(cta,0.3,{alpha:1,delay:.7});
+    }
+
+
+}
+
+function start(count) {
+        //console.log(counting);
+        if (!counting) {
+            counting = true;
+            number.innerHTML = count;
+            var timer = setInterval(function() {
+                if (count >= 34) {
+                    number.innerHTML = count;
+                    count--;
+                } else {
+                    clearInterval(timer);
+                    count = arguments[0];
+                    counting = false;
+                    TweenLite.to(textShadow,2 ,{alpha:1, delay:0});
+                    TweenLite.to(dollar_sign,.5 ,{alpha:1, delay:0});
+                    //lockdown();
+                    TweenLite.delayedCall(.3,lockdown)
+                    TweenLite.delayedCall(.3,countMask)
+                   // TweenLite.to("#number", 3, {textShadow:"0px 0px 0px rgba(255, 255, 255, 0)"});
+
+                }
+            },25);
+        }
+    }
+
+
+
+
+// **************************************
+// **** END FRAME ANIMATION
+// **************************************
+
+//
+function lockdown(){
+            TweenLite.to('#logo',.5 ,{alpha:0, delay:0,ease:Power4.easeOut});
+         TweenLite.to('#beyond_logo',.5 ,{alpha:1, delay:.5,ease:Power4.easeOut});
+         TweenLite.to('#beyond_logo',.5 ,{alpha:0, delay:2.5,ease:Power4.easeOut});
+         TweenLite.to('#logo',.5 ,{alpha:1, delay:3,ease:Power4.easeOut});
+            onMouseoverCTA();
+          ctaHotSopt.addEventListener('mouseenter', onMouseoverCTA);
+
+}
+
+function countMask() {
+    TweenLite.to(number_mask, 0.3 ,{alpha:1})
+    var tl = new TimelineMax();
+    tl
+    .fromTo(sign_mask, 1.2, {backgroundPosition:"-50px 0px"},{backgroundPosition:"50px 0px", backgroundRotation:5}, "maskAnimation")
+    .fromTo(count_mask, 1.2, {backgroundPosition:"-150px 0px"},{backgroundPosition:"150px 0px", backgroundRotation:5}, "maskAnimation+=.1")
+    .fromTo(cents_mask, 1.2, {backgroundPosition:"-150px 0px"},{backgroundPosition:"150px 0px", backgroundRotation:5}, "maskAnimation+=.2")
+    return tl;
+}
+
+/*======================  SHEEN ON MOUSEOVER CTA  =====================*/
+
+function onMouseoverCTA(){
+    console.log('in');
+//    TweenLite.to("#ntestover",0.5,{alpha:0});
+//    TweenLite.to("#hover",0.5,{alpha:1});
+//    TweenLite.to("#ie_ntestover",0.5,{alpha:0});
+//    TweenLite.to("#ie_hover",0.5,{alpha:1});
+
+    ctaHotSopt.addEventListener('mouseout', onMouseoutCTA);
+    TweenLite.to(sheen,1,{ delay:0,x:'200px', overwrite:false, force3D:false, onComplete:function(){
+            TweenLite.set(sheen,{x:'30px'})
+   }});
+}
+
+/*======================  MOUSEOUT CTA  =====================*/
+function onMouseoutCTA(){
+    console.log('out');
+//   TweenLite.to("#ntestover",0.5,{alpha:1});
+//   TweenLite.to("#hover",0.5,{alpha:0});
+//    TweenLite.to("#ie_ntestover",0.5,{alpha:1});
+//    TweenLite.to("#ie_hover",0.5,{alpha:0});
+   // TweenLite.set(sheen,{delay:0, x:'0', overwrite:false});
+}

@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  #Services is used to list of all the required microservices
+  backend:
+   #Used to build image from the dockerfile, with path provided as shown below
+    build: ./backend
+    image: test/node-dep-example:v2
+    # build:
+    #   # In this build context you can specify the original dockerfile or any name used for the dockerfile.
+    #   context: ./backend
+    #   dockerfile: dockerfile-dev
+    #   args:
+    #     version: 2.12
+    ports:
+      - '3000:80'
+    volumes:
+      - logs:/app/logs   #named volume
+      - ./backend:/app   # bind mount
+      - /app/node_module #anonymous volume
+
+    env_file:
+      - ./env/backend.env
+    depends_on: # Use to specify that this service requires another service to be up be it start building
+      - mongodb
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    #environment:
+      # when using a key value pair you don't need a side note
+      # but when using a kwarg you can use a dash as along with it as shown below
+      #- MONGO_INITDB_ROOT_PASSWORD=root
+      #MONGO_INITDB_ROOT_USERNAME: root
+      #MONGO_INITDB_ROOT_PASSWORD: root
+    #Using a file based environment variable
+    env_file:
+      - ./env/mongo.env
+    ports:
+      - 27017:27017
+    container_name: mongodb
+volumes:
+  # all Named volume has to be added here
+  data:
+  logs:
+
+    

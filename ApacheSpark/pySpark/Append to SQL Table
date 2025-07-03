@@ -1,0 +1,14 @@
+https://docs.microsoft.com/en-us/sql/connect/spark/connector?view=sql-server-ver15
+
+
+try:
+  df.write \
+    .format("com.microsoft.sqlserver.jdbc.spark") \
+    .mode("append") \
+    .option("url", url) \
+    .option("dbtable", table_name) \
+    .option("user", username) \
+    .option("password", password) \
+    .save()
+except ValueError as error :
+    print("Connector write failed", error)

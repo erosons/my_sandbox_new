@@ -1,0 +1,18 @@
+<html>
+<head>
+<style>
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="myDiv">
+  <h2>Hello this my INSTANCE EC2 instance hurray!</h2>
+</div>
+
+</body>
+</html>

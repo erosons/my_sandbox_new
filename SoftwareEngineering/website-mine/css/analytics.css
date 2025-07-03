@@ -1,0 +1,267 @@
+/* CSS Document for Screens */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+#page {
+    max-width: 1900px;
+    margin:  auto;
+    position: relative;
+}
+
+body {
+
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    color: #555;
+}
+
+/* Text */
+
+h1 {
+    margin: 0 0 1em 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #fff;
+}
+
+h4 {
+    margin: 0 0 1.5em 0;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+
+
+p {
+    margin: 0 0 .1em 0;
+}
+
+a {
+    color: #007eff
+}
+
+a:visited {
+    color: #65b1ff;
+}
+
+/*  Header  */
+
+/* header {
+    height: 500px;
+    background: #08172E url(../images/worldimg.png) no-repeat right bottom;
+    position: relatve;
+} */
+
+header a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 66px;
+    background: url(../images/tavels.svg) no-repeat 0 0;
+    background-size: contain;
+    top: 15px;
+    left: 20px;
+}
+
+header a.logo span {
+    display: none
+}
+
+
+/* Navigation*/
+
+nav {
+    background-color: rgb(15, 71, 93);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 50px 0 0 0;
+    width: 100%;
+}
+
+nav::after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0%;
+}
+
+nav ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+
+nav ul li a:visited {
+    color: #fff;
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #2b0306;
+    display: none;
+}
+
+nav ul ul li {
+    position: relative;
+}
+
+/* Targeting top level Elements */
+/* This used to Target direct ul after and not Ul with li parents*/
+nav>ul {
+
+    padding-left: 200px;
+
+}
+
+nav>ul>li {
+
+    float: left;
+
+}
+
+nav>ul>li>a {
+
+    width: auto;
+    padding: 10px 20px 10px 20px
+}
+
+/*to indicate there is a drop down */
+nav a[aria-haspopup="true"]::after {
+
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff
+}
+
+/*
+nav>ul>li>a[aria-haspopup="true"] {
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    left: 20px;
+    right: auto;
+    bottom: 6px;
+}
+*/
+
+section.atmosphere {
+    top: 50px;
+    height: 600px;
+    background:  url(../images/BI.png) no-repeat right bottom;
+    position: relative;
+    color: rgb(6, 6, 6);
+    text-align: left;
+    padding: 15px;
+}
+
+section.atmosphere article div.member {
+    padding: 200px;
+    padding-top: 100px;
+    line-height: 1.5em;
+    margin: 0 0 30px 0;
+    padding-right: 20px;
+    color: black;
+}
+
+section div.member {
+    position: relative;
+    float: left;
+    line-height: 2em;
+}
+
+/* footer */
+footer {
+    font-size: .9em;
+    margin: 40px;
+    color: #999;
+}
+
+footer .content {
+    display: inline;
+    color: #777
+}
+
+footer a {
+    margin-left: 30px;
+    color: #777;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #777
+}
+
+footer a:hover {
+    color: rgb(39, 45, 144)
+}
+
+ section div.responsive {
+    position: relative;
+    top: 100px;
+    right: 15px;
+    float: left;
+    left: 20px;
+    padding: 10px;
+    bottom: 20px;
+ }
+  
+  @media only screen and (max-width: 500px) {
+    section.responsive {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

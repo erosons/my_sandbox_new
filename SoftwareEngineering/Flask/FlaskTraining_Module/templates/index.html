@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #fff; /* White background for the main page */
+        }
+        nav.navbar {
+            background-color: #233B60; /* Dark blue background for the navigation bar */
+        }
+        nav.navbar a.nav-link {
+            color: #fff; /* White text color for navigation links */
+            font-size: 12px; /* Font size 12px for navigation links */
+            font-weight: normal; /* Regular font weight for navigation links */
+        }
+        /* Aside Canvas (1/4 of the main page width) */
+        aside.container-fluid {
+            background-color: #233B60; /* Dark blue background for the aside canvas */
+            height: 100vh;
+            width: 25%;
+            float: left;
+        }
+        /* Sections within the Aside Canvas */
+        .section {
+            padding: 10px;
+            border-bottom: 1px solid #ccc; /* Horizontal line separator */
+            color: #fff;
+        }
+        /* Container for floated content */
+        .content-container {
+            float: left;
+            font-size: medium;
+            margin-top: 0px;
+        }
+        /* p elements within the content container */
+        .content-container p {
+            margin: 0; /* Remove default margin */
+            font-size: medium;
+            color: #ccc;
+        }
+        /* Header with Horizontal Lines */
+        .hr-lines:before{
+                content:" ";
+                display: block;
+                height: 2px;
+                width: 130px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                background: white;
+                }
+        .hr-lines{
+                    position: relative;
+                    /*  new lines  */
+                    max-width: 400px;
+                    font-size: 16px;
+                    color: #ccc;
+                    margin: 40px auto;
+                    margin-bottom: 20px;
+                    text-align: center;
+            }
+            .hr-lines:after{
+                content:" ";
+                height: 2px;
+                width: 130px;
+                background: white;
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                }
+
+        /* Main Content (occupying 3/4 of the width) */
+        main.container-fluid {
+            width: 75%;
+            float: left;
+        }
+        .Prequites{
+            color: #fff;
+            font-size: 17px;
+            font-weight: lighter;
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Example Code -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="#">Career Path Planner</a>
+                </li>
+            </ul>
+           
+             <!-- Search Bar -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+           <!-- User Login with Profile Details -->
+                 <div class="d-flex align-items-center ms-3">
+                    <!-- Profile Image (You can replace this with an actual image) -->
+                    <img src="images/download.png" alt="User Profile" class="rounded-circle" style="width: 40px; height: 40px;">
+                    
+                    <!-- User Name and Dropdown Menu -->
+                    <div class="dropdown ms-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jtestn Doe <!-- Replace with the user's name -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- User Login with Profile Details complete -->
+        </div>
+    </div>
+</nav>
+
+
+<!-- Container for Canvas and Toggle Button -->
+<div class="canvas-container position-relative">
+        <!-- Aside Canvas (1/4 of the main page width) -->
+        <aside class="container-fluid  position-relative">
+            <h4 class="Prequites">Prequiste And Electives</h4>
+            <!-- Section 1 -->
+            <h2 class="hr-lines">First Semester</h2>
+            <div class="content-container">
+                <p>Item 1</p>
+                <p>Item 2</p>
+                <p>Item 3</p>
+            </div>
+            <br><br><br><br>
+            <h2 class="hr-lines">Second Semester</h2>
+            <div class="content-container">
+                <p>Item 1</p>
+                <p>Item 2</p>
+                <p>Item 3</p>
+            </div>
+            <br><br><br><br>
+            <h2 class="hr-lines">Third Semester</h2>
+            <div class="content-container">
+                <p>Item 1</p>
+                <p>Item 2</p>
+                <p>Item 3</p>
+            </div>
+            <br><br><br><br>
+            <h2 class="hr-lines">Fourth Semester</h2>
+            <div class="content-container">
+                <p>Item 1</p>
+                <p>Item 2</p>
+                <p>Item 3</p>
+            </div>
+            <br><br><br><br>
+            <h2 class="hr-lines">Course Details</h2>
+            <div class="content-container">
+                <p>Course Number</p>
+                <p> Course Unit</p>
+                <p>Course desc</p>
+            </div>
+            
+    </aside>
+       <!-- Toggle Button Positioned at the Top-Left Corner of the Canvas with Slight Overlap -->
+       <img id="toggleCanvas" src="images/handmouseter2.png" alt="Toggle Canvas" class="position-absolute top-0 start-0" style="cursor: pointer;">
+    </button>
+
+</div>
+
+
+<!-- Main Content (occupying 3/4 of the width) -->
+<main class="container-fluid">
+    <!-- Main content goes here -->
+    This is the main content.
+</main>
+
+<!-- Bootstrap JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // JavaScript to Toggle the Canvas
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggleCanvas");
+        const asideCanvas = document.querySelector("aside");
+
+        toggleButton.addEventListener("click", function () {
+            asideCanvas.classList.toggle("d-none"); // Toggle the 'd-none' class
+        });
+    });
+</script>
+</body>
+</body>
+</html>

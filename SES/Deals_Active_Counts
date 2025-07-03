@@ -1,0 +1,33 @@
+db.deals.aggregate([
+
+    {$project: {ISO: 1, facilities: 1, passThroughs: 1}},
+
+    {$unwind: '$facilities'},
+
+    {$match: {'facilities.powerFlowEnd': {$gte: new Date()}}},
+
+    {$project: {ISO: 1, LDC: '$facilities.UDC', passThroughs: 1}},
+
+    {$unwind: '$passThroughs'},
+
+    {$group: {
+
+        _id: {
+
+            ISO: '$ISO',
+
+            LDC: '$LDC',
+
+            passThrough: '$passThroughs'
+
+        },
+
+        count: {$sum: 1}
+
+    }},
+
+    {$project: {_id: 0, ISO: '$_id.ISO', LDC: '$_id.LDC', passThrough: '$_id.passThrough', count: 1}},
+
+    {$match: {LDC: {$ne: ''}}}
+
+])

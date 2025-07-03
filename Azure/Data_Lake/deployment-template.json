@@ -1,0 +1,196 @@
+{
+    "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Resources/deployments/stggen0000001_1726711529000",
+    "name": "stggen0000001_1726711529000",
+    "type": "Microsoft.Resources/deployments",
+    "tags": {
+      "primaryResourceId": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourcegroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001",
+      "marketplaceItemId": "Microsoft.StorageAccount-ARM",
+      "provisioningHash": "Analytics"
+    },
+    "properties": {
+      "templateHash": "4054025522799600917",
+      "parameters": {
+        "location": {
+          "type": "String",
+          "value": "westus2"
+        },
+        "storageAccountName": {
+          "type": "String",
+          "value": "stggen0000001"
+        },
+        "accountType": {
+          "type": "String",
+          "value": "Standard_LRS"
+        },
+        "kind": {
+          "type": "String",
+          "value": "StorageV2"
+        },
+        "minimumTlsVersion": {
+          "type": "String",
+          "value": "TLS1_2"
+        },
+        "supportsHttpsTrafficOnly": {
+          "type": "Bool",
+          "value": true
+        },
+        "allowBlobPublicAccess": {
+          "type": "Bool",
+          "value": false
+        },
+        "allowSharedKeyAccess": {
+          "type": "Bool",
+          "value": true
+        },
+        "defaultOAuth": {
+          "type": "Bool",
+          "value": false
+        },
+        "accessTier": {
+          "type": "String",
+          "value": "Hot"
+        },
+        "publicNetworkAccess": {
+          "type": "String",
+          "value": "Enabled"
+        },
+        "allowCrossTenantReplication": {
+          "type": "Bool",
+          "value": false
+        },
+        "networkAclsBypass": {
+          "type": "String",
+          "value": "AzureServices"
+        },
+        "networkAclsDefaultAction": {
+          "type": "String",
+          "value": "Allow"
+        },
+        "networkAclsIpRules": {
+          "type": "Array",
+          "value": []
+        },
+        "dnsEndpointType": {
+          "type": "String",
+          "value": "Standard"
+        },
+        "isHnsEnabled": {
+          "type": "Bool",
+          "value": true
+        },
+        "isSftpEnabled": {
+          "type": "Bool",
+          "value": false
+        },
+        "largeFileSharesState": {
+          "type": "String",
+          "value": "Enabled"
+        },
+        "keySource": {
+          "type": "String",
+          "value": "Microsoft.Storage"
+        },
+        "encryptionEnabled": {
+          "type": "Bool",
+          "value": true
+        },
+        "keyTypeForTableAndQueueEncryption": {
+          "type": "String",
+          "value": "Account"
+        },
+        "infrastructureEncryptionEnabled": {
+          "type": "Bool",
+          "value": false
+        },
+        "isBlobSoftDeleteEnabled": {
+          "type": "Bool",
+          "value": true
+        },
+        "blobSoftDeleteRetentionDays": {
+          "type": "Int",
+          "value": 7
+        },
+        "isContainerSoftDeleteEnabled": {
+          "type": "Bool",
+          "value": true
+        },
+        "containerSoftDeleteRetentionDays": {
+          "type": "Int",
+          "value": 7
+        },
+        "isShareSoftDeleteEnabled": {
+          "type": "Bool",
+          "value": true
+        },
+        "shareSoftDeleteRetentionDays": {
+          "type": "Int",
+          "value": 7
+        }
+      },
+      "mode": "Incremental",
+      "debugSetting": {
+        "detailLevel": "None"
+      },
+      "provisioningState": "Running",
+      "timestamp": "2024-09-19T02:06:40.4163088Z",
+      "duration": "PT4.3493832S",
+      "correlationId": "fe6379d1-8a92-4431-aab2-475b3fc83f47",
+      "providers": [
+        {
+          "namespace": "Microsoft.Storage",
+          "resourceTypes": [
+            {
+              "resourceType": "storageAccounts",
+              "locations": [
+                "westus2"
+              ]
+            },
+            {
+              "resourceType": "storageAccounts/blobServices",
+              "locations": [
+                null
+              ]
+            },
+            {
+              "resourceType": "storageAccounts/fileservices",
+              "locations": [
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "dependsOn": [
+            {
+              "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001",
+              "resourceType": "Microsoft.Storage/storageAccounts",
+              "resourceName": "stggen0000001"
+            }
+          ],
+          "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001/blobServices/default",
+          "resourceType": "Microsoft.Storage/storageAccounts/blobServices",
+          "resourceName": "stggen0000001/default"
+        },
+        {
+          "dependsOn": [
+            {
+              "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001",
+              "resourceType": "Microsoft.Storage/storageAccounts",
+              "resourceName": "stggen0000001"
+            },
+            {
+              "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001/blobServices/default",
+              "resourceType": "Microsoft.Storage/storageAccounts/blobServices",
+              "resourceName": "stggen0000001/default"
+            }
+          ],
+          "id": "/subscriptions/6e1da7fe-65f5-48b0-b3e4-9b1f59266f1e/resourceGroups/rg-demo-2/providers/Microsoft.Storage/storageAccounts/stggen0000001/fileservices/default",
+          "resourceType": "Microsoft.Storage/storageAccounts/fileservices",
+          "resourceName": "stggen0000001/default"
+        }
+      ],
+      "validationLevel": "Template"
+    }
+  }

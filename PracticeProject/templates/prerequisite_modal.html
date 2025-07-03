@@ -1,0 +1,19 @@
+<!-- The Modal -->
+<div id="waiverModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content-container">
+      <div class="modal-content">
+          <span class="close" id="cancelWaiverForm">&times;</span>
+          <form id="waiverForm" enctype="multipart/form-data">
+              <label for="reasonForWaiver">Reason for Waiver:</label>
+              <textarea style="width: 100%;" id="reasonForWaiver" name="reasonForWaiver" required></textarea><br><br>
+
+              <label for="attachment">Attachment:</label>
+              <input type="file" id="attachment" name="attachment" /> <br><br>
+
+              <button class=" btn btn-primary btn-sm request-waiver-btn" type="button" id="submitWaiverForm">Submit</button>
+              <button type="button" id="CloseWaiverForm">Cancel</button>
+          </form>
+      </div>
+  </div>
+</div>

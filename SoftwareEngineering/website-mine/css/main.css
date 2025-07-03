@@ -1,0 +1,398 @@
+/* CSS Document for Screens */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+#page {
+    max-width: 1900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+body {
+
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    color: #555;
+}
+
+/* Text */
+
+h1 {
+    margin: 0 0 1em 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #fff;
+}
+
+h4 {
+    margin: 0 0 1.5em 0;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+
+
+p {
+    margin: 0 0 .1em 0;
+}
+
+a {
+    color: #007eff
+}
+
+a:visited {
+    color: #65b1ff;
+}
+
+a.btn {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(80, 72, 72);
+    border: 1px solid #fff;
+    border-radius: 27.5px;
+    padding: 4px 15px;
+    position: relative;
+    left: 10px;
+    top: 30px;
+}
+
+/*  Header  */
+
+header {
+    height: 500px;
+    background: #08172E url(../images/worldimg.png) no-repeat right bottom;
+    position: relatve;
+}
+
+header a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 66px;
+    background: url(../images/tavels.svg) no-repeat 0 0;
+    background-size: contain;
+    top: 15px;
+    left: 20px;
+}
+
+galleries a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 66px;
+    background: url(../images/logo.svg) no-repeat 0 0;
+    background-size: contain;
+    top: 15px;
+    left: 20px;
+}
+
+galleries a.logo span {
+    display: none
+}
+
+header a.logo span {
+    display: none
+}
+
+header div.hero {
+    position: absolute;
+    width: 42%;
+    top: 130px;
+    left: 10%;
+}
+
+header div.hero h1 {
+    line-height: 1em;
+    margin: 0 0 30px 0;
+    color: #fff;
+}
+
+/* Section All */
+section {
+    padding: 0px 40px;
+}
+
+section::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* Section Main */
+
+section.main aside {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+section.main .content {
+    margin: 100px;
+    background: no-repeat center top;
+    background-size: 75px 75px;
+    padding-top: 85px;
+    text-align: left;
+}
+
+section.main aside h3 a {
+    color: rgb(67, 168, 209);
+    text-decoration: none;
+}
+
+section.main aside h3 a:hover {
+    color: rgb(154, 52, 160);
+    /*text-decoration: underline;*/
+}
+
+section.main aside .content.open-source {
+    background-image: url(../images/OST.png);
+}
+
+section.main aside .content.cloud {
+    background-image: url(../images/cloud.png);
+}
+
+section.main aside .content.Analytics {
+    background-image: url(../images/MIS.png);
+}
+
+/* Section Atmosphere*/
+
+section.atmosphere {
+    height: 370px;
+    background: rgb(67, 168, 209) url(../images/TechnologyIS.png) no-repeat right bottom;
+    position: relative;
+}
+
+section.atmosphere article div.member {
+    padding-top: 100px;
+    line-height: 1em;
+    margin: 0 0 30px 0;
+    color: rgb(1, 1, 1);
+}
+
+/* Scalability */
+
+section.scalability {
+    height: 370px;
+    background: rgb(251, 247, 247) url(../images/Scalabilty1.png) no-repeat left bottom;
+    position: relative;
+    text-align: right;
+}
+
+section.scalability aside .content {
+    padding-top: 100px;
+    width: 50%;
+    text-align: left;
+    margin-right: 10px;
+    float: right;
+}
+
+/* Security */
+
+section.Security {
+    height: 370px;
+    background: rgb(251, 247, 247) url(../images/Screen\ Shot\ 2022-09-26\ at\ 11.21.07\ PM.png) no-repeat right bottom;
+    position: relative;
+    text-align: right;
+}
+
+section.Security aside .content {
+    padding-top: 50px;
+    width: 50%;
+    text-align: left;
+    margin-right: 10px;
+    float: left;
+}
+
+section.Security blockquote {
+    margin: 0;
+    width: 32%;
+    color: #444;
+    background-color: rgb(251, 247, 247);
+    position: bottom;
+    bottom: 0;
+    right: 4x;
+
+}
+
+/* Navigation*/
+
+nav {
+    background-color: rgb(15, 71, 93);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 50px 0 0 0;
+    width: 100%;
+}
+
+nav::after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0%;
+}
+
+nav ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+}
+
+nav ul li a:visited {
+    color: #fff;
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #2b0336;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #2b0306;
+    display: none;
+}
+
+nav ul ul li {
+    position: relative;
+}
+
+/* Targeting top level Elements */
+/* This used to Target direct ul after and not Ul with li parents*/
+nav>ul {
+
+    padding-left: 200px;
+
+}
+
+nav>ul>li {
+
+    float: left;
+
+}
+
+nav>ul>li>a {
+
+    width: auto;
+    padding: 10px 20px 10px 20px
+}
+
+/*to indicate there is a drop down */
+nav a[aria-haspopup="true"]::after {
+
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff
+}
+
+/*
+nav>ul>li>a[aria-haspopup="true"] {
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    left: 20px;
+    right: auto;
+    bottom: 6px;
+}
+*/
+
+/* footer */
+footer {
+    font-size: .9em;
+    margin: 40px;
+    color: #999;
+}
+
+footer .content {
+    display: inline;
+    color: #777
+}
+
+footer a {
+    margin-left: 30px;
+    color: #777;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #777
+}
+
+footer a:hover {
+    color: rgb(39, 45, 144)
+}
+
+
+/* media Queries */
+
+@media screen and (max-width: 1000px) {
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    /* Header */
+    header div.hero {
+        left: 50%;
+    }
+
+    header div.hero h1 {
+        margin-bottom: 20px;
+    }
+
+    /*Section Atmospher */
+    section.atmosphere article {
+        padding-left: 300px;
+        background-size: 350px auto;
+    }
+
+
+
+}

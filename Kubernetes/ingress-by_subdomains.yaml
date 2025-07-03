@@ -1,0 +1,26 @@
+# write and ingress.yaml file
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  namespace: default
+# Routing rules: States that all traffic coming to myapp.com should be routed to the myapp-internal-service
+# Note
+# - the domain myapp.com must be valid
+# - the domain must be mapped to  Nodes's IP address,which is entry point to the cluster/server
+spec:
+  rules:
+  - host: analytics.mongoexoress.com
+    http:
+      paths:
+      - path: 
+        backend:
+          serviceName: analytics-service
+          servicePort: 80
+  - host: shopping.mongoexoress.com
+    http:
+      paths:
+      - path: 
+        backend:
+          serviceName: shopping-service
+          servicePort: 8080

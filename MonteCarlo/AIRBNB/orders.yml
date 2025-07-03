@@ -1,0 +1,42 @@
+namespace: learning
+montecarlo: 
+ custom_sql:
+  - name: data entry validation
+    description: Every Quanity order cannot be less than
+    sql: |
+        SELECT quantity FROM AIRBNB.DL_NORTHWIND.order_details 
+        where quantity <=0
+    comparisons: 
+    - type: threshold  # required
+      operator: GT
+      threshold_value: 0.0
+    schedule:
+      type: fixed
+      start_time: "2024-09-25T05:50:00"
+      interval_minutes: 720
+  - name: purchase order Entry
+    description: data Quality for purchase order Entry
+    sql: |
+        SELECT * FROM AIRBNB.DL_NORTHWIND.order_details
+        where purchase_order_id is NULL
+    comparisons: 
+    - type: threshold  # required
+      operator: GT
+      threshold_value: 0.0
+    schedule:
+      type: fixed
+      start_time: "2024-09-25T05:50:00"
+      interval_minutes: 720
+  - name: purchase order discount Threshold
+    description: data Quality for discount thresold alert
+    sql: |
+       SELECT * FROM AIRBNB.DL_NORTHWIND.order_details
+       where discount > .2
+    comparisons: 
+    - type: threshold  # required
+      operator: GT
+      threshold_value: 0.0
+    schedule:
+      type: fixed
+      start_time: "2024-09-25T05:50:00"
+      interval_minutes: 720

@@ -1,0 +1,17 @@
+insert into Product(ProductID,Name,Price,SKUID,user_id)
+values("FUR-CH-10002321","Hon Pagoda Stacking Chairs",770.352,"Furniture","40"),
+("FUR-CH-10004063","Global Deluxe High-Back Managers Chair",746.4078,"Furniture","41"),
+("FUR-CH-10002022","HON 5400 Series Task Chairs for Big and Tall",700.98,"Furniture","42"),
+("FUR-CH-10001854","Office Star - Professional Seat",673.8816,"Furniture","15"),
+("FUR-CH-10004087","Hon 4070 Series Pagoda Armless Upholstered Stacking Chairs",609.7157,"Furniture","42"),
+("FUR-CH-10000454","Hon Deluxe Fabric Upholstered Stacking Chairs",585.552,"Furniture","15"),
+("FUR-CH-100040634","Global Deluxe High-Back Managers Chair",580.5394,"Furniture","40"),
+("FUR-CH-10002073","Hon Olson Stacker Chairs",553.3902,"Furniture","41"),
+("FUR-CH-10003746","Hon 4070 Series Pagoda Round Back Stacking Chairs",539.2464,"Furniture","42"),
+("FUR-CH-10004495","Global Leather and Oak Executive Chair Black",523.7052,"Furniture","15"),
+("FUR-CH-10002320","Hon Pagoda Stacking Chairs",481.47,"Furniture","41"),
+("FUR-CH-10004675","Lifetime Advantage Folding Chairs",427.4368,"Furniture","42"),
+("FUR-CH-10004086","Hon 4070 Series Pagoda Armless Upholstered Stacking Chairs",423.0085,"Furniture","15"),
+("FUR-CH-10000309","Global Comet Stacking Arm Chair",422.51,"Furniture","40"),
+("FUR-CH-10002024","HON 5400 Series Task Chairs for Big and Tall",420.588,"Furniture","41"),
+("FUR-CH-10002335","Hon GuestStacker Chair",412.5394,"Furniture","42")

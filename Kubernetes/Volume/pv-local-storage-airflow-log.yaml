@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: airflow-storage-pvc-log
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+  #ReadWriteOnce - The volume can be mounted as read-write by a single node
+  #readWriteMany - The volume can be mounted as read-write by many nodes
+  #readOnlyMany - The volume can be mounted read-only by many nodes
+    - ReadWriteMany
+  storageClassName: log-storage-airflow
+  local:
+    path: /Users/s.eromonsei/storage/logs
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          # name of the node where the volume is located
+          - docker-desktop 

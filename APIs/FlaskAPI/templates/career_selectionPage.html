@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Market
+{% endblock %}
+
+{% block spinner %} 
+<div class="loading-overlay" id="loading-overlay">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden"> </span>
+    </div>
+</div>
+{% endblock%} 
+
+{% block ul %}
+<a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="loading-overlay" id="loading-overlay">
+    <i class="fas fa-spinner fa-spin fa-3x loading-spinner"></i>
+ </div>
+
+<div class="centered-content">
+    <img src="static/PVAMU.png" alt="Welcome Image" class="welcome-image-courseSlection">
+    <h2>Select your Career Path</h2>
+    <p>
+        Career planning and course tracking made easier with our application.
+    </p>
+ <div class="form-container">
+        <form action="/careerSelection" method="POST" class="role-form form-horizontal-courseSlection">
+            <div class="form-group">
+                <label for="course-major-select">Course Major:</label>
+                <select id="category" name="category" class="form-select role-select" aria-label="Select Your Role" required>
+                    <option value="">Select a Program</option>
+                    {% for programs in programs %}
+                        <option value="{{ programs['name'] }}">{{ programs['name'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+      </form>
+
+     <form class="form-horizontal" style="margin-left: 10px;">
+            <div class="form-group">
+                <label for="career-choice-select">CareerPath:</label>
+                <select id="subcategory" class="form-select role-select" aria-label="Subcategory" name="subcategory" required>
+                    <option value="">Select a CareerChoice</option> 
+                </select>
+            </div>
+      </form>
+  </div>
+    <button id="view-profile-button" name="view-profile-button" type="submit" value="View Profile" class="btn btn-primary btn-block" style="width: 200px;">View Profile</button>
+    <button id="create-profile-button" name="create-profile-button" type="submit" value="Create Profile" class="btn btn-primary btn-block" style="width: 200px;">Create Profile</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="static/js/creating-careerpath.js"></script> <!-- Creating categoeies and SubCategores Dropdown -->
+<script src="static/js/onclick-view_inSelectionpage.js"></script>   <!-- On clicking View Profile Button  -->
+<script src="static/js/onclick-createbutton_inSelectionpage.js"></script>  <!-- On clicking Create Profile View Button -->
+
+{% endblock %}

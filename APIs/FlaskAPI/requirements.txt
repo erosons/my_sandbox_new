@@ -1,0 +1,14 @@
+flask==2.2.2
+Graphviz
+Flask-Login 
+psycopg2
+Flask-SQLAlchemy
+psycopg2-binary==2.9.7
+Flask-Login==0.62
+Werkzeug==2.3.7
+watchdog==3.0.0
+Flask-Migrate==4.0.5
+Flask-Mail
+email-validator
+flask-marshmallow==0.15.0
+marshmallow-sqlalchemy=0.29.0

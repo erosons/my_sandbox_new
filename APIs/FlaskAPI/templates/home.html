@@ -1,0 +1,34 @@
+<!--using a Base Template => This extends functionality allows us to reuse a base template -->  
+<!--Block => This functinality allows user the dynamism
+     to customize target web pages  with customization 
+     by defining a block area in the base page -->
+
+{% extends 'base.html' %}  
+
+{% block title %}
+  Career Planner & Course Tracker
+{% endblock %}
+
+{% block ul %}
+<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+{% endblock %}
+
+{% block content %}
+<div class="centered-content">
+    <img src="static/PVAMU.png" alt="Welcome Image" class="welcome-image">
+    <h2>Welcome to Career Planner & Course Tracker</h2>
+    <p>
+        This Application allows you to plan your career path by helping you select and track your courses.
+    </p>
+    <br>
+    <br>
+    <div class="canvas">
+        <!-- Explanation and buttons -->
+        <p>
+            Explore your career options and track your progress with our Career Planner & Course Tracker.
+        </p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Login to Your Profile</a>
+        <a href="{{ url_for('complain') }}" class="btn btn-primary">Complaint</a>
+    </div>
+</div>
+{% endblock %}

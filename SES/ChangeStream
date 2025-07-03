@@ -1,0 +1,84 @@
+db.watchdeal.aggregate([
+{"$replaceWith": {"$mergeObjects": ["$$ROOT", "$_id"]}},
+    {"$replaceWith": {"$mergeObjects": ["$$ROOT", "$fullDocument"]}},
+    {
+        "$project": {
+            "_id": 1,
+            "operationType": 1,
+            "clusterTime": 1,
+            "ISO": 1,
+            "contractExecutedDateTime": 1,
+            "accountName": 1,
+            "customerName": 1,
+            "dealType": 1,
+            "contractID": 1,
+            "product": 1,
+            "facilities": 1,
+            "subcontracts": 1,
+            "passThroughs": 1,
+        }
+    },
+    {"$match": {"accountName": {"$ne": "@DEMO MISO"}}},
+    {"$unwind": "$facilities"},
+    {
+        "$addFields": {
+            "UNIQUE_ID": "$_id",
+            "OPERATIONTYPE": "$operationType",
+            "UPDATE_DATE": "$clusterTime",
+            "DEALTYPE": "$dealType",
+            "EXECUTION_DATE": "$contractExecutedDateTime",
+            "ACCOUNT_NAME": "$accountName",
+            "CUSTOMER_NAME": "$customerName",
+            "CONTRACT_ID": "$contractID",
+            "PRODUCT": "$product",
+            "LDC_NUMBER": "$facilities.LDCNumber",
+            "FLOW_START_DT": "$facilities.powerFlowStart",
+            "FLOW_END_DT": "$facilities.powerFlowStart",
+            "CONGESTION_ZONE": "$facilities.congestionZone",
+            "RATECODE": "$facilities.rateCode",
+            "PROFILE": "$facilities.profile",
+            "PROFILE_ID": "$facilities.profileID",
+            "UDC": "$facilities.UDC",
+            "NOTE": "$facilities.note",
+        }
+    },
+    {
+        "$project": {
+            "operationType": 0,
+            "clusterTime": 0,
+            "contractExecutedDateTime": 0,
+            "accountName": 0,
+            "customerName": 0,
+            "contractID": 0,
+            "dealType": 0,
+            "product": 0,
+        }
+    },
+    {"$unwind": {"path": "$passThroughs", "preserveNullAndEmptyArrays": True}},
+    {"$unwind": {"path": "$subcontracts", "preserveNullAndEmptyArrays": True}},
+    {"$project": {"facilities": 0}},
+    {
+        "$addFields": {
+            "PRODUCT": "$subcontracts.productType",
+            "HEATRATE": "$subcontracts.heatRate",
+            "PECENT": "$subcontracts.percent",
+        }
+    },
+    {"$project": {"subcontracts": 0,}},
+    {
+        "$addFields": {
+            "STATUS": {
+                "$cond": {
+                    "if": {
+                        "$and": [
+                            {"$eq": ["$DEALTYPE", "New"]},
+                            {"$eq": ["$OPERATIONTYPE", "update"]},
+                        ]
+                    },
+                    "then": "pending",
+                    "else": "Not pending",
+                },
+            },
+        }
+    },
+])

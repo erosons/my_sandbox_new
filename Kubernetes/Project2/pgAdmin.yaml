@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+  labels:
+    app: pgadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin
+  # Snippet for the Pod
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+      containers:
+      - name: pgadmin
+        image: dpage/pgadmin4:snapshot
+        ports:
+        - containerPort: 80
+        # Snippet for the secret:
+        env:
+        - name: pgadmin_DEFAULT_EMAIL
+          valueFrom:
+           configMapKeyRef:
+              name: postgres-configmap
+              key: postgres-root-email
+        - name: pgadmin_DEFAULT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-root-password
+        # Reading from a configMap
+        - name: pgadmin_LISTEN_ADDRESS
+          # value: we can pass mongodb address directly
+          valueFrom:
+           configMapKeyRef:
+              name: postgres-configmap
+              key: database_url
+
+---
+# Snippet for the service:
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-ingress-service
+spec:
+  selector:
+    app: pgadmin
+  ports:
+    - protocol: TCP
+      port: 5050
+      targetPort: 5050
+
+
+

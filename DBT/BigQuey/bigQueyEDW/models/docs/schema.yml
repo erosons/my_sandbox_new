@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: '{{ doc("example") }}'
+    columns:
+      - name: customer_id
+        data_type: int64
+        description: Unique identifier for each customer.
+        tests:
+          - generic_not_null
+          - unique
+      - name: company
+        data_type: string
+        description: The company of the customer.
+        quote: true
+      - name: last_name
+        data_type: string
+        description: The last name of the customer.
+        quote: true
+      - name: first_name
+        data_type: string
+        description: The first name of the customer.
+        tests:
+          - not_null
+        quote: true
+      - name: email_address
+        data_type: string
+        description: The email address of the customer.
+        quote: true
+      - name: job_title
+        data_type: string
+        description: The job title of the customer.
+        quote: true
+      - name: business_phone
+        data_type: string
+        description: The business phone of the customer.
+        quote: true
+      - name: insertion_timestamp
+        data_type: timestamp
+        description: The timestamp of when the record was inserted.
+        quote: true
+
+  - name: fact_sales
+    description: The 'fact_sales' model is a fact table that contains detailed
+      information about each sale transaction.
+    columns:
+      - name: order_id
+        data_type: int64
+        description: Unique identifier for each order.
+        quote: true
+      - name: product_id
+        data_type: int64
+        description: Unique identifier for the product.
+        quote: true
+      - name: customer_id
+        data_type: int64
+        description: Unique identifier for the customer.
+        quote: true
+      - name: quantity
+        data_type: float64
+        description: The quantity of the product sold.
+        quote: true

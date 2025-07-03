@@ -1,0 +1,6 @@
+Flask
+Graphviz
+Flask-Login 
+Flask-SQLAlchemy
+psycopg2-binary==2.9.7
+Flask-Login==0.62

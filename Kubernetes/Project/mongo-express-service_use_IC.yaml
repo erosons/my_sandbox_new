@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express2
+  labels:
+    app: mongo-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express2
+  # Snippet for the Pod
+  template:
+    metadata:
+      labels:
+        app: mongo-express2
+    spec:
+      containers:
+      - name: mongo-express2
+        image: mongo-express
+        ports:
+        - containerPort: 8081
+        # Snippet for the secret:
+        env:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME 
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-username
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-password
+        # Reading from a configMap
+        - name: ME_CONFIG_MONGODB_SERVER
+          # value: we can pass mongodb address directly
+          valueFrom:
+           configMapKeyRef:
+              name: mongodb-configmap
+              key: database_url
+
+---
+# Snippet for the service:
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-ingress-service
+spec:
+  selector:
+    app: mongo-express2
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+
+
+

@@ -1,0 +1,28 @@
+Transactional Data,,,,Product Master Data,,,Partner Data Master,,Customer Master Data,,
+Order Number,Order Date,Order Qty,Total Price,Product Number,Product Name,Unit Price,Distributor Name,Distributor Address,Customer ID,Customer Name,Customer Address
+2345123,20-Nov-2022,1,25,5233,Roku Streaming Stick,25,Roku,"57 William St.
+Antioch, CA 94509",34563,Corbin Montes,"9614 Sycamore Rd.
+San Marcos, CA 92069"
+2359213,25-Dec-2022,3,168,1233,Wireless Keybord Combo 23,56,Jimmy Accessories ,"2 Mulberry Drive
+Cerritos, CA 90703",35343,Amanda Everett,"8224 Rockwell St.
+San Diego, CA 92105"
+2912345,22-Nov-2022,5,500,6322,Portable External Hard Drive,100,Jimmy Accessories ,"2 Mulberry Drive
+Cerritos, CA 90703",34562,Diana Ryan,"9416 Orchard Lane
+Victorville, CA 92392"
+2914564,18-Nov-2022,11,990,2344,Tri-color Ink Printer,90,Roku,"57 William St.
+Antioch, CA 94509",34356,Kylee Ochoa,"8 Howard Lane
+Indio, CA 92201"
+2913463,13-Nov-2022,1,30,1234,"24"" Professional Thin Monitor",30,Roku,"57 William St.
+Antioch, CA 94509",34656,Mina Dickson,"3 Ridge Court
+Canyon Country, CA 91351"
+2345356,8-Dec-2022,2,40,2344,USB C to USB Adapter,20,Jimmy Accessories ,"2 Mulberry Drive
+Cerritos, CA 90703",34663,Will Huerta,"995 North Military Ave.
+San Jose, CA 95127"
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,Master Data,,,,,,,,,,
+,1. Entities/Data Points that define your business,,,,,,,,,,
+,2. Non-transactional data,,,,,,,,,,
+,3. Can change but usually slowly,,,,,,,,,,
+,4. Describes transactions or other business entities,,,,,,,,,,
