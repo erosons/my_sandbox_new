@@ -6,10 +6,10 @@ resource "databricks_secret_scope" "db_secret_scp"{
   name = "${var.secret_scope_name}-${random_integer.number.result}"
 
   keyvault_metadata {
-    resource_id =azurerm_key_vault.keyvault.id
+    resource_id = azurerm_key_vault.keyvault.id
     dns_name = azurerm_key_vault.keyvault.vault_uri
   }   
-  depends_on = [ azurerm_key_vault.keyvault ]
+  depends_on = [azuread_service_principal.this,azurerm_databricks_workspace.this,azurerm_key_vault.keyvault ]
 }
 
 resource "azurerm_key_vault_secret" "secret" {

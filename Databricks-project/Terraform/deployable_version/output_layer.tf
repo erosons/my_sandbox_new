@@ -10,9 +10,6 @@ output "databrick_workspace" {
   value = azurerm_databricks_workspace.this.id
 }
 
-output "databrick_metastore_data" {
-  value = databricks_metastore_data_access.this.id
-}
 output keyvault_name_data {
   value = azurerm_key_vault.keyvault.id
 }

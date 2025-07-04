@@ -16,7 +16,7 @@ resource "azurerm_role_assignment" "access_connector_contributor" {
 resource "azurerm_role_assignment" "storage_acct_spn_contributor" {
   scope                = azurerm_storage_account.this.id
   role_definition_name = "Storage Blob Data Contributor"
-  principal_id         = azuread_service_principal.this.id
+  principal_id         = azuread_service_principal.this.object_id
 
   depends_on = [
     azurerm_storage_account.this,
@@ -30,7 +30,7 @@ resource "azurerm_role_assignment" "storage_acct_spn_contributor" {
 resource "azurerm_role_assignment" "workspace_spn_contributor" {
   scope                = azurerm_databricks_workspace.this.id
   role_definition_name = "Contributor"
-  principal_id         = azurerm_storage_account.this.id
+  principal_id         = azuread_service_principal.this.object_id
   depends_on = [
     azurerm_storage_account.this,
     azuread_service_principal.this

@@ -62,3 +62,8 @@ variable "sku_value" {
   type        = string
   default     = "premium"
 }
+
+variable "storage_account_name" {
+  description = "Name of the storage account to create"
+  type        = string
+}

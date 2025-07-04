@@ -10,5 +10,5 @@ resource "azurerm_databricks_access_connector" "this" {
   tags = {
     Environment = "POC"
   }
-  depends_on = [ azurerm_databricks_workspace.this,azurerm_storage_account.this ]
+  depends_on = [ azurerm_databricks_workspace.this,azurerm_storage_account.this ,azurerm_resource_group.rg]
 }
