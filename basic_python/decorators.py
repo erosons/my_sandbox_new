@@ -1,105 +1,25 @@
-def con_upperCase(text: str) -> str:
-    return text.upper()
-
-
-def con_lowerCase(text: str) -> str:
-    return text.lower()
-
-
-# Calling a function from another function
-
-
-def greeting(func) -> None:
-
-    greeting = func("I am a programmer")
-    print(greeting)
-
-    greeting(con_upperCase)
-
-    greeting(con_lowerCase)
-
-
-# Using functions an obj, basically involve passing function as an obj/ creating an instance from it
-lower_str = con_lowerCase
-
-lower_str("My name is Samson")
-
-"""
-Return Function from a function Example 1
-"""
-
-
-def create_adder(x):  # step2
-    def adder(y):
-        return x + y
-
-    return adder
-
-
-add_15 = create_adder(15)  # step1
-add_15(10)
-
-"----> return result----> 25  The first function calls in the inner function"
-
-"""
-Return Function from a function Example 2
-"""
-
-
-def create_adder():
-    return print("Hello World")  # execution step8
-
-
-def hello_decorator(func):  # execution step2
-    print(" I am a decorator")  # execution step 3
-
-    def inner():  # execution step4
-        print("This is the wrappper")  # execution step 6
-
-        func()  # execution step7
-
-    return inner  # execution step5
-
-
-decorator_function = hello_decorator(create_adder)  # execution step1
-
-decorator_function()  # execution step9
-
-
-"""
-Decorator implementation for the above implementation
-"""
-
-
-@hello_decorator
-def create_adder():
-    return print("Hello World")
-
 
 """
 Using A decorator
 """
 
 
-def arithmetic_decorator(func):
-    print("transform function to arithmetic progression")
+def arithmetric_geometric(func):
 
-    def inner(*args, **kwargs):
-        print("inner wrapper for arithmetic function")
+    def inner(*arg):
+        _geometric = func(*arg) / (arg[1] - 1)
 
-        _geometric_progression = func(*args, **kwargs) / (n - 1)
-
-        return _geometric_progression
-
+        return _geometric
+     
     return inner
 
 
-@arithmetic_decorator
+@arithmetric_geometric
 def arithmetic_progression(*args):
 
-    aithmetric_progression = a + (n - 1) * d
+    arithmetic_progression = a + (n - 1) * d
 
-    return aithmetric_progression
+    return arithmetic_progression
 
 
 a, n, d = 5, 4, 2
