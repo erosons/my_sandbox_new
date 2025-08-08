@@ -1,0 +1,31 @@
+# helm-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ingestion-gateway.fullname" . }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels: { app: {{ include "ingestion-gateway.name" . }} }
+  template:
+    metadata:
+      labels: { app: {{ include "ingestion-gateway.name" . }} }
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+    spec:
+      serviceAccountName: {{ include "ingestion-gateway.serviceAccountName" . }}
+      containers:
+        - name: gw
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports: [{ containerPort: 8080 }]
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: pg-credentials
+                  key: url
+          livenessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+            initialDelaySeconds: 10
+            periodSeconds: 15

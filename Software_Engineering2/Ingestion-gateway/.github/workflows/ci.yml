@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        ports: [5432:5432]
+        env:
+          POSTGRES_PASSWORD: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install deps
+        run: pip install poetry && poetry install --only main,test
+      - name: Run tests & coverage
+        run: pytest --cov=src --cov-report=xml
+      - name: Lint
+        run: ruff check src tests

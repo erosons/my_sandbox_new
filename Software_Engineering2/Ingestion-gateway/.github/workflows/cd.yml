@@ -1,0 +1,35 @@
+name: CD
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+env:
+  AWS_REGION: us-east-2
+  EKS_CLUSTER: data-eks
+  ECR_REPO: ingestion-gateway
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions: { id-token: write, contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::123456789012:role/GH-OIDC
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Login to ECR
+        run: aws ecr get-login-password | docker login --username AWS --password-stdin \
+             ${{ steps.login-ecr.outputs.registry }}
+      - name: Build & Push
+        run: |
+          IMAGE_TAG=${GITHUB_REF#refs/tags/}
+          docker build -t $ECR_REPO:$IMAGE_TAG .
+          docker tag  $ECR_REPO:$IMAGE_TAG $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
+          docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install ingestion-gateway helm-chart \
+            --namespace ingest --create-namespace \
+            --set image.tag=$IMAGE_TAG
