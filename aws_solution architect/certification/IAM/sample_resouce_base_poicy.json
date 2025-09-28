@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BucketLevelAccessForDeveloperPrincipals",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_NAME>"
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:PutBucketPolicy",
+        "s3:DeleteBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::example-bucket",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/role": "developer"
+        }
+      }
+    },
+    {
+      "Sid": "ObjectLevelAccessForDeveloperPrincipals",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_NAME>"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:AbortMultipartUpload",
+        "s3:DeleteObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::example-bucket/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/role": "developer"
+        }
+      }
+    }
+  ]
+}

@@ -14,13 +14,14 @@ RUN apk update && apk add --no-cache \
 
 # Install Airflow and necessary dependencies
 RUN pip install --upgrade pip && \
-    pip install apache-airflow
 
-# Set up Airflow home environment variable
-ENV AIRFLOW_HOME=/opt/airflow
+#     pip install apache-airflow
 
-# Expose ports for Airflow Web Server and Scheduler
-EXPOSE 8080 8793
+# # Set up Airflow home environment variable
+# ENV AIRFLOW_HOME=/opt/airflow
+
+# # Expose ports for Airflow Web Server and Scheduler
+# EXPOSE 8080 8793
 
 # Copy the settings.vscode.json file into the remote data directory for VSCode
 COPY .devcontainer/settings.vscode.json /root/.vscode-server/data/Machine/settings.json
@@ -30,4 +31,4 @@ COPY .devcontainer/settings.vscode.json /root/.vscode-server/data/Machine/settin
 RUN adduser -D -h /opt/airflow airflow && chown -R airflow: /opt/airflow
 
 # Switch to airflow user
-USER airflow
+USER vscode

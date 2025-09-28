@@ -1,5 +1,5 @@
 {
-    "name": "Airflow Dev Container",
+    "name": "MyUbuntu Dev Container",
     "dockerFile": "Dockerfile",
     "settings": {
       //"python.pythonPath": "/usr/local/bin/python",
