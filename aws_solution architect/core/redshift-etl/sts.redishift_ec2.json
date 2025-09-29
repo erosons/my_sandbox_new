@@ -1,0 +1,16 @@
+// Associate with redishift IAM Role for it to be able to access s3 bucket
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"Service": [
+					"ec2.amazonaws.com",
+					"redshift.amazonaws.com"
+				]
+			},
+			"Action": "sts:AssumeRole"
+		}
+	]
+}

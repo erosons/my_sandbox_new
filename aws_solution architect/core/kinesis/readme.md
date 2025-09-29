@@ -136,6 +136,17 @@ Example policy snippet:
 }
 
 
+
+###### AUTHENTICATION
+Add this line to cross account Polices that was used to create databricks line policies
+- {
+   "Efeect" : "Allow",
+   "Action" : "iam:PassRole"
+   "Resource": <"roleARN">
+
+}
+
+
 Instance Profile: Attach the IAM role to an EC2 instance profile so Databricks clusters running on EC2 can assume this role automatically.
 
 Databricks: In workspace admin, attach the instance profile to your cluster.

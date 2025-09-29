@@ -1,5 +1,0 @@
-databricks-connect==15.4.2
-databricks-cli
-databricks-sdk
-databricks-sql-connector
-
