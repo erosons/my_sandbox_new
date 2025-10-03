@@ -1,0 +1,29 @@
+CockroackEDW:
+  outputs:
+    dev_sqlserver:
+      Encrypt: true
+      TrustServerCertificate: true
+      database: CockroackEDW
+      driver: ODBC Driver 18 for SQL Server
+      password: see .env files
+      schema: Sales
+      server: localhost
+      type: sqlserver
+      user: sa
+    prod_postgres:
+      dbname: prod_db
+      host: prod.host.com
+      password: prod_password
+      port: 5432
+      schema: prod_schema
+      type: postgres
+      user: prod_user
+    test_postgres:
+      dbname: test_db
+      host: test.host.com
+      password: test_password
+      port: 5432
+      schema: test_schema
+      type: postgres
+      user: test_user
+  target: dev_sqlserver
