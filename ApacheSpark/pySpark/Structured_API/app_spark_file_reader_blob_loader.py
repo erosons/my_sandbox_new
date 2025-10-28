@@ -31,20 +31,6 @@ def get_next_file_name(prev_file_name):
     return next_file
 
 
-def main() -> DataFrame:
-    spark = get_spark_session(os.environ.get("ENVIRON"), "Demo_App")
-
-    while True:
-        file_name = get_next_file_name(BASELINE_FILE)
-        download_res, res = download_file(file_name)
-        if res.status_code == 404:
-            print(f"Invalid file name or downloads caught up till {file_name}")
-        df = file_reader(spark, "json", download_res)
-        df.createOrReplaceTempView("GhArch_data")
-        save_dataframe_to_blob(df)
-        spark.sql(f"SELECT * FROM GhArch_data LIMIT 10 ").show()
-        os.unlink(download_res)
-
 
 # Convert the DataFrame to a CSV string
 def save_dataframe_to_blob(
@@ -93,6 +79,22 @@ def save_dataframe_to_blob(
     blobs_list = container_service_client.list_blobs()
     for blob in blobs_list:
         print(blob.name)
+
+        
+def main() -> DataFrame:
+    spark = get_spark_session(os.environ.get("ENVIRON"), "Demo_App")
+
+    while True:
+        file_name = get_next_file_name(BASELINE_FILE)
+        download_res, res = download_file(file_name)
+        if res.status_code == 404:
+            print(f"Invalid file name or downloads caught up till {file_name}")
+        df = file_reader(spark, "json", download_res)
+        df.createOrReplaceTempView("GhArch_data")
+        save_dataframe_to_blob(df)
+        spark.sql(f"SELECT * FROM GhArch_data LIMIT 10 ").show()
+        os.unlink(download_res)
+
 
 
 if __name__ == "__main__":
