@@ -41,12 +41,13 @@ def job_creation():
             },
             DefaultArguments={
                 '--TempDir': 's3://glue-source-hoc/temp_dir',
-                '--job-bookmark-option': 'job-bookmark-disable'
+                '--job-bookmark-option': 'job-bookmark-disable',
+                '--extra-py-files': 's3://your-bucket/path-to-packages/package1.whl,s3://your-bucket/path-to-packages/package2.whl,s3://your-bucket/path-to-your-repo/your-library.zip'
             },
             MaxRetries=1,
-            GlueVersion='3.0',
+            GlueVersion='5.0',
             NumberOfWorkers=2,
-            WorkerType='Standard'
+            WorkerType='G 1X'
         )
 
         print(json.dumps(response, indent=4, sort_keys=True, default=str))

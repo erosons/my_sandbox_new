@@ -39,7 +39,10 @@ persons.drop_fields(["Order ID"])
 # Writing the data back to s3 bucket or any other datastore
 
 
-glueContext.write_dynamic_frame.from_options(persons, connection_type="s3",
-                                             connection_options={"path": "s3://etldata01/person"}, format="parquet")
+glueContext.write_dynamic_frame.from_options(persons, 
+                                             connection_type="s3",
+                                             connection_options={"path": "s3://etldata01/person"},
+                                             format="parquet"
+                                             )
 
 job.commit()

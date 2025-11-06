@@ -19,8 +19,11 @@ logging.basicConfig(filename='new.log', filemode='w', level=logging.DEBUG,
 
 def glue():
     logging.info("Setting up glue connection")
-    aws_glue = boto3.client('glue', aws_access_key_id=access_keys,
-                            aws_secret_access_key=secret_key, region_name="")
+    aws_glue = boto3.client(
+        'glue',
+         aws_access_key_id=access_keys,
+         aws_secret_access_key=secret_key, region_name=""
+         )
 
     return aws_glue
 

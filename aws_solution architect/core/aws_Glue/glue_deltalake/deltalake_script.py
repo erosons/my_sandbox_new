@@ -56,6 +56,8 @@ df.createOrReplaceTempView("temp_table")
 df2 = spark.sql("select * from temp_table")
 df2.show(3) # Show data in temp_table
 
+
+# Merge logic to upsert data into Delta Lake table
 # Define Delta Lake table path
 delta_table_path = "s3://your-bucket/path-to-delta-lake-table"
 
