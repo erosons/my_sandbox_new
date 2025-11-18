@@ -140,3 +140,5 @@ Databricks-project/Terraform/deployable_version/.terraform/providers/registry.te
 Databricks-project/Terraform/deployable_version/.terraform/providers/registry.terraform.io/databricks/databricks/1.34.0/linux_amd64/terraform-provider-databricks_v1.34.0
 Databricks-project/Terraform/deployable_version/terraform.tfstate
 Databricks-project/Terraform/deployable_version/tfplan
+aws_solution architect/core/aws_Glue/pipeline.conf
+pipeline.conf

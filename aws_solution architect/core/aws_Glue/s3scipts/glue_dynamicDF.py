@@ -13,6 +13,11 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 
+sc.addPyFile("s3://redshift-stagingarea/src/archive_name.zip")
+from my_class import MyClass
+
+mycontext = MyClass("Print Message")
+mycontext.print_message()
 
 # Read Data from crawled database
 persons = glueContext.create_dynamic_frame.from_catalog(
