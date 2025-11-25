@@ -5,7 +5,6 @@ from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
 
-
 # https: // docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-samples-legislators.html
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 sc = SparkContext.getOrCreate()

@@ -9,7 +9,7 @@ from awsglue.transforms import *
 import sys
 
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
-sc = SparkContext()
+sc = SparkContext.getOrCreate()
 glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
@@ -27,16 +27,20 @@ AWSGlueDataCatalog_node1762411867824 = glueContext.create_dynamic_frame.from_cat
 )
 
 # Script generated for node Change Schema
-ChangeSchema_node1762411878776 = ApplyMapping.apply(
+dfymapping = ApplyMapping.apply(
     frame=AWSGlueDataCatalog_node1762411867824,
     mappings=[
         ("rowid", "long", "rowid", "long"), ("orderid", "string", "orderid", "string"), ("orderdate", "string", "orderdate", "string"), ("shipdate", "string", "shipdate", "string"), ("shipmode", "string", "shipmode", "string"), ("customerid", "string", "customerid", "string"), ("customername", "string", "customername", "string"), ("segment", "string", "segment", "string"), ("country", "string", "country", "string"), ("city", "string", "city", "string"), (
             "state", "string", "state", "string"), ("postalcode", "long", "postalcode", "long"), ("region", "string", "region", "string"), ("productid", "string", "productid", "string"), ("category", "string", "category", "string"), ("subcategory", "string", "subcategory", "string"), ("productname", "string", "productname", "string"), ("sales", "double", "sales", "double"), ("quantity", "long", "quantity", "long"), ("discount", "double", "discount", "double"), ("profit", "double", "profit", "double")], transformation_ctx="ChangeSchema_node1762411878776")
 
+dfyfilter = dfymapping.filter(
+    f=lambda x: x["shipmode"] in ["Second Class"]
+    and x["state"] in ["Kentucky"]
+)
 # Script generated for node Amazon Redshift
 AmazonRedshift_node1762411889705 = glueContext.write_dynamic_frame.from_options(
     frame=ChangeSchema_node1762411878776,
-    connection_type="redshift",
+    connection_type="redshift656
     connection_options={"redshiftTmpDir": "s3://aws-glue-assets-975049886938-us-east-1/temporary/",
                         "useConnectionProperties": "true",
                         "dbtable": "public.superstore_orders",
